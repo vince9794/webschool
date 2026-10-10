@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Greenhill School Parent Portal — View grades, attendance, fees, and school communications.">
+  <title>Parent Portal | The Greenhill School</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/portal.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       LOGIN SCREEN
+       ============================================================ -->
+  <div class="login-page" id="loginPage">
+
+    <!-- Left: brand side -->
+    <div class="login-brand">
+      <div class="login-brand-header">
+        <svg class="login-crest" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 5 L92 25 L92 70 Q92 100 50 115 Q8 100 8 70 L8 25 Z" fill="#0F1B33" stroke="#C9A227" stroke-width="2"/>
+          <path d="M50 25 L50 90" stroke="#C9A227" stroke-width="1.2"/>
+          <path d="M30 50 L70 50" stroke="#C9A227" stroke-width="1.2"/>
+          <circle cx="50" cy="42" r="7" fill="#C9A227"/>
+          <path d="M30 72 Q50 62 70 72" stroke="#C9A227" stroke-width="1" fill="none"/>
+          <path d="M30 80 Q50 70 70 80" stroke="#C9A227" stroke-width="1" fill="none"/>
+          <text x="50" y="105" text-anchor="middle" fill="#C9A227" font-family="serif" font-size="7" font-weight="bold">1978</text>
+        </svg>
+        <div class="login-brand-header-text">
+          <span class="login-brand-name">The Greenhill School</span>
+          <span class="login-brand-tagline">Ad Astra Per Curiositatem</span>
+        </div>
+      </div>
+
+      <div class="login-brand-message">
+        <div class="login-brand-kicker">Parent Portal</div>
+        <h1>Everything about your child's school day, <em>in one place.</em></h1>
+        <p>
+          Welcome back to The Greenhill School Parent Portal. Sign in to view your child's progress, attendance, fees, and stay connected with our community.
+        </p>
+
+        <div class="login-features">
+          <div class="login-feature">
+            <div class="login-feature-icon"><i class="fas fa-chart-line"></i></div>
+            <div>
+              <h4>Grades & Progress</h4>
+              <p>Termly reports, teacher observations, and progress charts.</p>
+            </div>
+          </div>
+          <div class="login-feature">
+            <div class="login-feature-icon"><i class="fas fa-coins"></i></div>
+            <div>
+              <h4>Fees & Payments</h4>
+              <p>Statements, receipts, and secure M-Pesa payments.</p>
+            </div>
+          </div>
+          <div class="login-feature">
+            <div class="login-feature-icon"><i class="fas fa-calendar-check"></i></div>
+            <div>
+              <h4>Calendar & Events</h4>
+              <p>School calendar, upcoming events, and term dates.</p>
+            </div>
+          </div>
+          <div class="login-feature">
+            <div class="login-feature-icon"><i class="fas fa-bell"></i></div>
+            <div>
+              <h4>Notifications</h4>
+              <p>Instant updates from teachers and school office.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="login-brand-footer">
+        <span><i class="fas fa-lock"></i> Secure Portal</span>
+        <a href="index.html">← Back to greenhill.ac.ke</a>
+      </div>
+    </div>
+
+    <!-- Right: login panel -->
+    <div class="login-panel">
+      <div class="login-wrapper">
+        <a href="index.html" class="back-link">
+          <i class="fas fa-arrow-left"></i> Back to main site
+        </a>
+
+        <div class="login-header">
+          <div class="login-kicker">Sign In</div>
+          <h2>Welcome back.</h2>
+          <p>Please enter your credentials to access the Parent Portal.</p>
+        </div>
+
+        <div class="login-error" id="loginError">
+          <i class="fas fa-exclamation-circle"></i>
+          <span id="loginErrorText">Invalid email or password.</span>
+        </div>
+
+        <form class="login-form" id="loginForm" novalidate>
+          <div class="form-group">
+            <label for="loginEmail">Email Address <span class="req">*</span></label>
+            <div class="login-input-wrap">
+              <input type="email" id="loginEmail" placeholder="parent@greenhill.ac.ke" autocomplete="email" required>
+              <i class="fas fa-envelope"></i>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Password <span class="req">*</span></label>
+            <div class="login-input-wrap">
+              <input type="password" id="loginPassword" placeholder="Enter your password" autocomplete="current-password" required>
+              <i class="fas fa-lock"></i>
+              <button type="button" class="toggle-password" id="togglePassword" aria-label="Show password">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="login-options">
+            <label class="remember-check">
+              <input type="checkbox" id="rememberMe">
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="forgot-link">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="login-btn" id="loginBtn">
+            <i class="fas fa-sign-in-alt"></i> Sign In
+          </button>
+        </form>
+
+        <div class="login-support">
+          <p>
+            Having trouble signing in?<br>
+            Contact the school office for assistance.
+          </p>
+          <div class="support-contacts">
+            <a href="tel:+254700123456" class="support-btn">
+              <i class="fas fa-phone"></i> +254 700 123 456
+            </a>
+            <a href="mailto:portal@greenhill.ac.ke" class="support-btn">
+              <i class="fas fa-envelope"></i> portal@greenhill.ac.ke
+            </a>
+          </div>
+
+          <div class="demo-notice">
+            <i class="fas fa-info-circle"></i>
+            <div>
+              <strong>Demo portal:</strong> Enter any email and password (min 4 characters) to preview. No real data is stored.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       DASHBOARD
+       ============================================================ -->
+  <div class="dashboard" id="dashboard">
+
+    <!-- Sidebar overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <svg class="sidebar-crest" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 5 L92 25 L92 70 Q92 100 50 115 Q8 100 8 70 L8 25 Z" fill="#0F1B33" stroke="#C9A227" stroke-width="2"/>
+          <path d="M50 25 L50 90" stroke="#C9A227" stroke-width="1.2"/>
+          <path d="M30 50 L70 50" stroke="#C9A227" stroke-width="1.2"/>
+          <circle cx="50" cy="42" r="7" fill="#C9A227"/>
+        </svg>
+        <div class="sidebar-header-text">
+          <span class="sidebar-brand">Greenhill Portal</span>
+          <span class="sidebar-tagline">Parent Access</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" id="sidebarNav">
+        <div class="nav-label">Main</div>
+        <button class="nav-item active" data-view="dashboard">
+          <i class="fas fa-home"></i> <span>Dashboard</span>
+        </button>
+        <button class="nav-item" data-view="fees">
+          <i class="fas fa-coins"></i> <span>Fees & Payments</span>
+          <span class="nav-badge">1</span>
+        </button>
+        <button class="nav-item" data-view="grades">
+          <i class="fas fa-graduation-cap"></i> <span>Grades & Reports</span>
+        </button>
+        <button class="nav-item" data-view="progress">
+          <i class="fas fa-chart-line"></i> <span>Progress</span>
+        </button>
+
+        <div class="nav-label">School Life</div>
+        <button class="nav-item" data-view="notifications">
+          <i class="fas fa-bell"></i> <span>Notifications</span>
+          <span class="nav-badge">4</span>
+        </button>
+        <button class="nav-item" data-view="calendar">
+          <i class="fas fa-calendar-alt"></i> <span>School Calendar</span>
+        </button>
+
+        <div class="nav-label">Account</div>
+        <button class="nav-item" data-view="profile">
+          <i class="fas fa-user-graduate"></i> <span>Student Profile</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-user">
+        <div class="sidebar-avatar">GW</div>
+        <div class="sidebar-user-info">
+          <div class="sidebar-user-name">Grace Wanjiru</div>
+          <div class="sidebar-user-role">Parent · Grade 6</div>
+        </div>
+        <button class="sidebar-logout" id="logoutBtn" title="Sign out">
+          <i class="fas fa-sign-out-alt"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+      <!-- Topbar -->
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="topbar-title" id="topbarTitle">Dashboard</div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="topbar-search">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search...">
+          </div>
+          <button class="icon-btn" id="notifBtn" aria-label="Notifications">
+            <i class="fas fa-bell"></i>
+            <span class="notif-dot"></span>
+          </button>
+          <button class="icon-btn" aria-label="Help">
+            <i class="fas fa-question-circle"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="content">
+
+        <!-- ===================== DASHBOARD VIEW ===================== -->
+        <section class="view active" id="view-dashboard">
+
+          <!-- Welcome banner -->
+          <div class="welcome-banner">
+            <div class="welcome-banner-content">
+              <div>
+                <h2>Karibu, <em>Grace.</em></h2>
+                <p>Here's what's happening with Amani this term.</p>
+              </div>
+              <div class="welcome-date">
+                <i class="fas fa-calendar"></i>
+                <span id="todayDate">Tuesday, 17 September 2026</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-icon navy"><i class="fas fa-graduation-cap"></i></div>
+              <div class="stat-info">
+                <div class="label">Overall Average</div>
+                <div class="value">B+</div>
+                <div class="meta up"><i class="fas fa-arrow-up"></i> +4% from Term 2</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon forest"><i class="fas fa-user-check"></i></div>
+              <div class="stat-info">
+                <div class="label">Attendance</div>
+                <div class="value">96%</div>
+                <div class="meta">92 of 96 days present</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon crimson"><i class="fas fa-coins"></i></div>
+              <div class="stat-info">
+                <div class="label">Fees Balance</div>
+                <div class="value">KES 45K</div>
+                <div class="meta down"><i class="fas fa-exclamation-circle"></i> Due 1 Oct 2026</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon gold"><i class="fas fa-bell"></i></div>
+              <div class="stat-info">
+                <div class="label">Notifications</div>
+                <div class="value">4</div>
+                <div class="meta">2 unread this week</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent notifications + upcoming events -->
+          <div class="grid-2-1">
+            <!-- Notifications preview -->
+            <div class="card">
+              <div class="card-header">
+                <h3><i class="fas fa-bell"></i> Recent Notifications</h3>
+                <button class="btn-download" onclick="switchView('notifications')">View all</button>
+              </div>
+              <div class="notif-list" id="dashNotifList"></div>
+            </div>
+
+            <!-- Upcoming events preview -->
+            <div class="card">
+              <div class="card-header">
+                <h3><i class="fas fa-calendar-alt"></i> Upcoming Events</h3>
+              </div>
+              <div class="card-body">
+                <div class="events-list" id="dashEventsList" style="margin-top:0; padding-top:0; border:none;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fee snapshot + Term grade snapshot -->
+          <div class="grid-1-1">
+            <div class="card">
+              <div class="card-header">
+                <h3><i class="fas fa-coins"></i> Fee Snapshot</h3>
+                <button class="btn-download" onclick="switchView('fees')">Manage</button>
+              </div>
+              <div class="card-body">
+                <div class="fee-progress">
+                  <div class="fee-progress-label">
+                    <span>Paid: <strong>KES 30,000</strong></span>
+                    <span>Total: <strong>KES 75,000</strong></span>
+                  </div>
+                  <div class="fee-progress-bar">
+                    <div class="fee-progress-fill" style="width: 40%"></div>
+                  </div>
+                </div>
+                <div style="margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap;">
+                  <span class="status-badge paid"><i class="fas fa-check"></i> 2 receipts available</span>
+                  <span class="status-badge pending"><i class="fas fa-clock"></i> 1 payment pending</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3><i class="fas fa-graduation-cap"></i> Term 3 Snapshot</h3>
+                <button class="btn-download" onclick="switchView('grades')">Full report</button>
+              </div>
+              <div class="card-body">
+                <div class="term-stats" style="margin-top:0;">
+                  <div class="term-stat">
+                    <div class="term">Term 1</div>
+                    <div class="grade">B</div>
+                    <div class="delta up"><i class="fas fa-arrow-up"></i> 72%</div>
+                  </div>
+                  <div class="term-stat">
+                    <div class="term">Term 2</div>
+                    <div class="grade">B</div>
+                    <div class="delta up"><i class="fas fa-arrow-up"></i> 74%</div>
+                  </div>
+                  <div class="term-stat">
+                    <div class="term">Term 3</div>
+                    <div class="grade">B+</div>
+                    <div class="delta up"><i class="fas fa-arrow-up"></i> 78%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ===================== FEES VIEW ===================== -->
+        <section class="view" id="view-fees">
+          <div class="section-title">
+            <div>
+              <h2>Fees & Payments</h2>
+              <p>Term 3, 2026 · Amani Wanjiru · Grade 6</p>
+            </div>
+          </div>
+
+          <!-- Fee summary cards -->
+          <div class="fee-summary">
+            <div class="fee-stat paid">
+              <div class="label"><i class="fas fa-check-circle"></i> Total Paid</div>
+              <div class="amount">KES 30,000</div>
+              <div class="meta">Across 2 payments</div>
+            </div>
+            <div class="fee-stat outstanding">
+              <div class="label"><i class="fas fa-exclamation-circle"></i> Balance Due</div>
+              <div class="amount">KES 45,000</div>
+              <div class="meta">Due by 1 October 2026</div>
+            </div>
+            <div class="fee-stat due">
+              <div class="label"><i class="fas fa-file-invoice"></i> Term Total</div>
+              <div class="amount">KES 75,000</div>
+              <div class="meta">Term 3, 2026</div>
+            </div>
+          </div>
+
+          <!-- Progress -->
+          <div class="card" style="margin-bottom: 24px;">
+            <div class="card-body">
+              <div class="fee-progress-label">
+                <span>Payment progress</span>
+                <span><strong>40%</strong> complete</span>
+              </div>
+              <div class="fee-progress-bar">
+                <div class="fee-progress-fill" style="width: 40%"></div>
+              </div>
+              <p style="margin-top: 14px; font-size: 0.82rem; color: var(--charcoal-light);">
+                <i class="fas fa-info-circle" style="color: var(--gold);"></i>
+                Fees may be paid via <strong>M-Pesa</strong>, bank transfer, or cheque. Instalment plans are available on request.
+              </p>
+            </div>
+          </div>
+
+          <!-- Payment history -->
+          <div class="card" style="margin-bottom: 24px;">
+            <div class="card-header">
+              <h3><i class="fas fa-history"></i> Payment History</h3>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Reference</th>
+                    <th>Description</th>
+                    <th>Amount (KES)</th>
+                    <th>Status</th>
+                    <th>Receipt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>12 Sep 2026</td>
+                    <td>GH-2026-0912</td>
+                    <td>Term 3 fees — M-Pesa</td>
+                    <td><strong>20,000</strong></td>
+                    <td><span class="status-badge paid"><i class="fas fa-check"></i> Paid</span></td>
+                    <td><button class="btn-download" onclick="downloadReceipt('GH-2026-0912')"><i class="fas fa-download"></i> Download</button></td>
+                  </tr>
+                  <tr>
+                    <td>02 Aug 2026</td>
+                    <td>GH-2026-0802</td>
+                    <td>Term 3 deposit — M-Pesa</td>
+                    <td><strong>10,000</strong></td>
+                    <td><span class="status-badge paid"><i class="fas fa-check"></i> Paid</span></td>
+                    <td><button class="btn-download" onclick="downloadReceipt('GH-2026-0802')"><i class="fas fa-download"></i> Download</button></td>
+                  </tr>
+                  <tr>
+                    <td>15 Jun 2026</td>
+                    <td>GH-2026-0615</td>
+                    <td>Term 2 balance</td>
+                    <td><strong>15,000</strong></td>
+                    <td><span class="status-badge paid"><i class="fas fa-check"></i> Paid</span></td>
+                    <td><button class="btn-download" onclick="downloadReceipt('GH-2026-0615')"><i class="fas fa-download"></i> Download</button></td>
+                  </tr>
+                  <tr>
+                    <td>01 Oct 2026</td>
+                    <td>GH-2026-1001</td>
+                    <td>Term 3 balance</td>
+                    <td><strong>45,000</strong></td>
+                    <td><span class="status-badge pending"><i class="fas fa-clock"></i> Pending</span></td>
+                    <td><button class="btn-download" onclick="payNow('GH-2026-1001', 45000)"><i class="fas fa-credit-card"></i> Pay now</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Statements -->
+          <div class="card">
+            <div class="card-header">
+              <h3><i class="fas fa-file-invoice"></i> Fee Statements</h3>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Term</th>
+                    <th>Academic Year</th>
+                    <th>Issued</th>
+                    <th>Status</th>
+                    <th>Download</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Term 3</strong></td>
+                    <td>2026</td>
+                    <td>15 September 2026</td>
+                    <td><span class="status-badge pending"><i class="fas fa-clock"></i> Outstanding</span></td>
+                    <td><button class="btn-download" onclick="downloadStatement('T3-2026')"><i class="fas fa-download"></i> Download PDF</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Term 2</strong></td>
+                    <td>2026</td>
+                    <td>28 June 2026</td>
+                    <td><span class="status-badge paid"><i class="fas fa-check"></i> Settled</span></td>
+                    <td><button class="btn-download" onclick="downloadStatement('T2-2026')"><i class="fas fa-download"></i> Download PDF</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Term 1</strong></td>
+                    <td>2026</td>
+                    <td>20 March 2026</td>
+                    <td><span class="status-badge paid"><i class="fas fa-check"></i> Settled</span></td>
+                    <td><button class="btn-download" onclick="downloadStatement('T1-2026')"><i class="fas fa-download"></i> Download PDF</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== GRADES VIEW ===================== -->
+        <section class="view" id="view-grades">
+          <div class="section-title">
+            <div>
+              <h2>Grades & Reports</h2>
+              <p>Academic year 2026 · Term 3 · Amani Wanjiru</p>
+            </div>
+            <button class="btn-download" onclick="downloadReport()"><i class="fas fa-file-pdf"></i> Download full report (PDF)</button>
+          </div>
+
+          <div class="card" style="margin-bottom: 24px;">
+            <div class="card-header">
+              <h3><i class="fas fa-book-open"></i> Subject Grades — Term 3</h3>
+              <span class="status-badge paid"><i class="fas fa-check"></i> Reports issued</span>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Subject</th>
+                    <th>Teacher</th>
+                    <th>CA1</th>
+                    <th>CA2</th>
+                    <th>Exam</th>
+                    <th>Average</th>
+                    <th>Grade</th>
+                    <th>Report</th>
+                  </tr>
+                </thead>
+                <tbody id="gradesBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Term reports -->
+          <div class="card">
+            <div class="card-header">
+              <h3><i class="fas fa-file-alt"></i> Term Reports</h3>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Term</th>
+                    <th>Issued</th>
+                    <th>Overall Average</th>
+                    <th>Position</th>
+                    <th>Download</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Term 3, 2026</strong></td>
+                    <td>15 September 2026</td>
+                    <td><strong>78%</strong> (B+)</td>
+                    <td>5th of 32</td>
+                    <td><button class="btn-download" onclick="downloadReport('T3-2026')"><i class="fas fa-download"></i> Download</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Term 2, 2026</strong></td>
+                    <td>30 June 2026</td>
+                    <td><strong>74%</strong> (B)</td>
+                    <td>7th of 32</td>
+                    <td><button class="btn-download" onclick="downloadReport('T2-2026')"><i class="fas fa-download"></i> Download</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Term 1, 2026</strong></td>
+                    <td>22 March 2026</td>
+                    <td><strong>72%</strong> (B)</td>
+                    <td>8th of 32</td>
+                    <td><button class="btn-download" onclick="downloadReport('T1-2026')"><i class="fas fa-download"></i> Download</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== PROGRESS VIEW ===================== -->
+        <section class="view" id="view-progress">
+          <div class="section-title">
+            <div>
+              <h2>Academic Progress</h2>
+              <p>Subject performance across Term 1 – Term 3, 2026</p>
+            </div>
+          </div>
+
+          <div class="card" style="margin-bottom: 24px;">
+            <div class="card-header">
+              <h3><i class="fas fa-chart-line"></i> Performance Trend</h3>
+              <span class="status-badge paid"><i class="fas fa-arrow-up"></i> Improving</span>
+            </div>
+            <div class="card-body">
+              <div class="graph-wrap">
+                <svg class="graph-svg" viewBox="0 0 720 260" preserveAspectRatio="none" id="lineGraph">
+                  <!-- Y-axis grid lines -->
+                  <line x1="60" y1="30" x2="700" y2="30" stroke="#E8E4DC" stroke-width="1"/>
+                  <line x1="60" y1="80" x2="700" y2="80" stroke="#E8E4DC" stroke-width="1"/>
+                  <line x1="60" y1="130" x2="700" y2="130" stroke="#E8E4DC" stroke-width="1"/>
+                  <line x1="60" y1="180" x2="700" y2="180" stroke="#E8E4DC" stroke-width="1"/>
+                  <line x1="60" y1="230" x2="700" y2="230" stroke="#D9D3C5" stroke-width="1"/>
+
+                  <!-- Y-axis labels -->
+                  <text x="45" y="35" text-anchor="end" font-size="11" fill="#5A5A5A" font-family="Source Sans 3">100</text>
+                  <text x="45" y="85" text-anchor="end" font-size="11" fill="#5A5A5A" font-family="Source Sans 3">85</text>
+                  <text x="45" y="135" text-anchor="end" font-size="11" fill="#5A5A5A" font-family="Source Sans 3">70</text>
+                  <text x="45" y="185" text-anchor="end" font-size="11" fill="#5A5A5A" font-family="Source Sans 3">55</text>
+                  <text x="45" y="235" text-anchor="end" font-size="11" fill="#5A5A5A" font-family="Source Sans 3">40</text>
+
+                  <!-- X-axis labels -->
+                  <text x="145" y="252" text-anchor="middle" font-size="11" fill="#5A5A5A" font-family="Source Sans 3" font-weight="700">Term 1</text>
+                  <text x="380" y="252" text-anchor="middle" font-size="11" fill="#5A5A5A" font-family="Source Sans 3" font-weight="700">Term 2</text>
+                  <text x="615" y="252" text-anchor="middle" font-size="11" fill="#5A5A5A" font-family="Source Sans 3" font-weight="700">Term 3</text>
+
+                  <!-- Mathematics line (crimson) -->
+                  <polyline points="145,130 380,105 615,80" fill="none" stroke="#A6192E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="145" cy="130" r="6" fill="#A6192E" stroke="#FAF7F0" stroke-width="2"/>
+                  <circle cx="380" cy="105" r="6" fill="#A6192E" stroke="#FAF7F0" stroke-width="2"/>
+                  <circle cx="615" cy="80" r="6" fill="#A6192E" stroke="#FAF7F0" stroke-width="2"/>
+
+                  <!-- English line (gold) -->
+                  <polyline points="145,140 380,120 615,100" fill="none" stroke="#C9A227" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="145" cy="140" r="6" fill="#C9A227" stroke="#FAF7F0" stroke-width="2"/>
+                  <circle cx="380" cy="120" r="6" fill="#C9A227" stroke="#FAF7F0" stroke-width="2"/>
+                  <circle cx="615" cy="100" r="6" fill="#C9A227" stroke="#FAF7F0" stroke-width="2"/>
+
+                  <!-- Science line (forest) -->
+                  <polyline points="145,155 380,130 615,105" fill="none" stroke="#2D5A3D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="145" cy="155" r="6" fill="#2D5A3D" stroke="#FAF7F0" stroke-width="2"/>
+                  <circle cx="380" cy="130" r="6" fill="#2D5A3D" stroke="#FAF7F0" stroke-width="2"/>
+                  <circle cx="615" cy="105" r="6" fill="#2D5A3D" stroke="#FAF7F0" stroke-width="2"/>
+
+                  <!-- Kiswahili line (navy) -->
+                  <polyline points="145,110 380,95 615,70" fill="none" stroke="#1B2A4A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="145" cy="110" r="6" fill="#1B2A4A" stroke="#FAF7F0" stroke-width="2"/>
+                  <circle cx="380" cy="95" r="6" fill="#1B2A4A" stroke="#FAF7F0" stroke-width="2"/>
+                  <circle cx="615" cy="70" r="6" fill="#1B2A4A" stroke="#FAF7F0" stroke-width="2"/>
+                </svg>
+              </div>
+
+              <div class="graph-legend">
+                <div class="legend-item"><span class="legend-dot crimson"></span> Mathematics</div>
+                <div class="legend-item"><span class="legend-dot gold"></span> English</div>
+                <div class="legend-item"><span class="legend-dot forest"></span> Science</div>
+                <div class="legend-item"><span class="legend-dot navy"></span> Kiswahili</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Term comparison -->
+          <div class="grid-1-1">
+            <div class="card">
+              <div class="card-header">
+                <h3><i class="fas fa-chart-bar"></i> Term Averages</h3>
+              </div>
+              <div class="card-body">
+                <div class="term-stats" style="margin-top:0;">
+                  <div class="term-stat">
+                    <div class="term">Term 1</div>
+                    <div class="grade">72%</div>
+                    <div class="delta up"><i class="fas fa-arrow-up"></i> Baseline</div>
+                  </div>
+                  <div class="term-stat">
+                    <div class="term">Term 2</div>
+                    <div class="grade">74%</div>
+                    <div class="delta up"><i class="fas fa-arrow-up"></i> +2%</div>
+                  </div>
+                  <div class="term-stat">
+                    <div class="term">Term 3</div>
+                    <div class="grade">78%</div>
+                    <div class="delta up"><i class="fas fa-arrow-up"></i> +4%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3><i class="fas fa-medal"></i> Teacher Observations</h3>
+              </div>
+              <div class="card-body">
+                <div class="detail-list">
+                  <div class="detail-row">
+                    <span class="key">Mathematics</span>
+                    <span class="val" style="color: var(--forest);">Excellent improvement</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="key">English</span>
+                    <span class="val" style="color: var(--forest);">Strong reader</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="key">Science</span>
+                    <span class="val" style="color: var(--gold);">Steady progress</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="key">Kiswahili</span>
+                    <span class="val" style="color: var(--forest);">Confident speaker</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="key">Conduct</span>
+                    <span class="val" style="color: var(--forest);">Kind & attentive</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== NOTIFICATIONS VIEW ===================== -->
+        <section class="view" id="view-notifications">
+          <div class="section-title">
+            <div>
+              <h2>Notifications</h2>
+              <p>Updates from teachers, admin, and the school office</p>
+            </div>
+            <button class="btn-download" onclick="markAllRead()"><i class="fas fa-check-double"></i> Mark all as read</button>
+          </div>
+
+          <div class="card">
+            <div class="notif-list" id="fullNotifList"></div>
+          </div>
+        </section>
+
+        <!-- ===================== CALENDAR VIEW ===================== -->
+        <section class="view" id="view-calendar">
+          <div class="section-title">
+            <div>
+              <h2>School Calendar</h2>
+              <p>Term 3, 2026 · September – December</p>
+            </div>
+            <button class="btn-download" onclick="downloadCalendar()"><i class="fas fa-download"></i> Download calendar (PDF)</button>
+          </div>
+
+          <div class="grid-2-1">
+            <div class="card">
+              <div class="calendar-wrap">
+                <div class="calendar-header">
+                  <h4><i class="fas fa-calendar-alt"></i> September 2026</h4>
+                  <div class="calendar-nav">
+                    <button aria-label="Previous month"><i class="fas fa-chevron-left"></i></button>
+                    <button aria-label="Next month"><i class="fas fa-chevron-right"></i></button>
+                  </div>
+                </div>
+                <div class="calendar-grid" id="calendarGrid">
+                  <!-- Populated by JS -->
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3><i class="fas fa-star"></i> Upcoming Events</h3>
+              </div>
+              <div class="card-body">
+                <div class="events-list" id="fullEventsList" style="margin-top:0; padding-top:0; border:none;"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== PROFILE VIEW ===================== -->
+        <section class="view" id="view-profile">
+          <div class="profile-hero">
+            <div class="profile-avatar">AW</div>
+            <div class="profile-info">
+              <h2>Amani Wanjiru</h2>
+              <p>Grade 6 · Greenhill School · Student ID GH/2020/118</p>
+              <div class="profile-tags">
+                <span class="profile-tag"><i class="fas fa-id-badge"></i> Grade 6</span>
+                <span class="profile-tag"><i class="fas fa-hashtag"></i> GH/2020/118</span>
+                <span class="profile-tag"><i class="fas fa-calendar"></i> Age 11</span>
+                <span class="profile-tag"><i class="fas fa-user-check"></i> 96% attendance</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="profile-details">
+            <!-- Personal info -->
+            <div class="card">
+              <div class="card-header">
+                <h3><i class="fas fa-user"></i> Personal Information</h3>
+              </div>
+              <div class="card-body">
+                <div class="detail-list">
+                  <div class="detail-row">
+                    <span class="key">Full Name</span>
+                    <span class="val">Amani Wanjiru</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="key">Admission No.</span>
+                    <span class="val">GH/2020/118</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="key">Grade</span>
+                    <span class="val">Grade 6</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="key">Date of Birth</span>
+                    <span class="val">14 May 2015</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="key">Class Teacher</span>
+                    <span class="val">Ms. Faith Wairimu</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="key">Enrolled</span>
+                    <span class="val">January 2020</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Family + contacts -->
+            <div class="card">
+              <div class="card-header">
+                <h3><i class="fas fa-users"></i> Family & Contacts</h3>
+              </div>
+              <div class="card-body">
+                <div class="detail-list">
+                  <div class="detail-row">
+                    <span class="key">Parent / Guardian</span>
+                    <span class="val">Grace Wanjiru</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="key">Parent Phone</span>
+                    <span class="val">+254 720 987 654</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="key">Parent Email</span>
+                    <span class="val" style="font-size:0.82rem;">grace.wanjiru@example.com</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="key">Emergency Contact</span>
+                    <span class="val">James Wanjiru</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="key">Emergency Phone</span>
+                    <span class="val">+254 733 456 789</span>
+                  </div>
+                  <div class="detail-row">
+                    <span class="key">Home Address</span>
+                    <span class="val" style="font-size:0.82rem;">Karen, Nairobi</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick actions -->
+          <div class="card" style="margin-top: 24px;">
+            <div class="card-header">
+              <h3><i class="fas fa-bolt"></i> Quick Actions</h3>
+            </div>
+            <div class="card-body">
+              <div class="qa-list">
+                <button class="qa-btn" onclick="downloadReport()">
+                  <i class="fas fa-file-pdf"></i>
+                  <div class="qa-text">
+                    Download latest report card
+                    <small>Term 3, 2026 · PDF</small>
+                  </div>
+                </button>
+                <button class="qa-btn" onclick="switchView('fees')">
+                  <i class="fas fa-coins"></i>
+                  <div class="qa-text">
+                    View fee statement
+                    <small>Balance: KES 45,000</small>
+                  </div>
+                </button>
+                <button class="qa-btn" onclick="switchView('calendar')">
+                  <i class="fas fa-calendar-alt"></i>
+                  <div class="qa-text">
+                    Open school calendar
+                    <small>Term 3 events & meetings</small>
+                  </div>
+                </button>
+                <button class="qa-btn" onclick="toast('Contact details updated successfully.')">
+                  <i class="fas fa-edit"></i>
+                  <div class="qa-text">
+                    Update contact details
+                    <small>Phone, email, and address</small>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Toast container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script>
+    /* ============================================================
+       DATA
+       ============================================================ */
+    const gradesData = [
+      { subject: 'Mathematics', teacher: 'Ms. Faith Wairimu', ca1: 78, ca2: 82, exam: 80 },
+      { subject: 'English', teacher: 'Mr. Samuel Kiprop', ca1: 72, ca2: 76, exam: 74 },
+      { subject: 'Kiswahili', teacher: 'Ms. Wanjiru Kariuki', ca1: 82, ca2: 85, exam: 80 },
+      { subject: 'Science & Nature', teacher: 'Mr. Daniel Kimani', ca1: 74, ca2: 78, exam: 76 },
+      { subject: 'Social Studies', teacher: 'Mr. Peter Njoroge', ca1: 70, ca2: 74, exam: 72 },
+      { subject: 'Handwork', teacher: 'Mr. Brian Ochieng', ca1: 85, ca2: 88, exam: 86 },
+      { subject: 'Music', teacher: 'Ms. Aisha Hassan', ca1: 88, ca2: 90, exam: 87 },
+      { subject: 'Art & Studio', teacher: 'Ms. Njeri Mwangi', ca1: 80, ca2: 84, exam: 82 },
+      { subject: 'Physical Education', teacher: 'Mr. Kamau Njoroge', ca1: 82, ca2: 85, exam: 83 }
+    ];
+
+    const notificationsData = [
+      { id: 1, title: 'Fee reminder — Term 3 balance', text: 'Your balance of KES 45,000 is due on 1 October 2026.', time: '2 hours ago', icon: 'coins', color: 'crimson', unread: true },
+      { id: 2, title: 'Mathematics test result posted', text: 'Amani scored 80% in the latest Mathematics test. Well done!', time: '1 day ago', icon: 'graduation-cap', color: 'forest', unread: true },
+      { id: 3, title: 'Parent-Teacher Meeting — 5 Oct', text: 'Please book a slot for the Term 3 parent-teacher conference.', time: '2 days ago', icon: 'calendar-alt', color: 'gold', unread: true },
+      { id: 4, title: 'Science Fair — 22 September', text: 'Amani has been selected to present at the Science Fair.', time: '3 days ago', icon: 'flask', color: 'sky', unread: true },
+      { id: 5, title: 'Library book due', text: '"The River Between" is due for return on 25 September.', time: '4 days ago', icon: 'book', color: 'gold', unread: false },
+      { id: 6, title: 'Inter-house athletics — 19 Oct', text: 'Amani has been registered for the 200m race.', time: '1 week ago', icon: 'running', color: 'forest', unread: false },
+      { id: 7, title: 'New term 3 fees statement', text: 'Your Term 3 statement is now available for download.', time: '1 week ago', icon: 'file-invoice', color: 'crimson', unread: false }
+    ];
+
+    const eventsData = [
+      { month: 'Sep', day: '22', title: 'Science Fair — Family Open Day', location: 'Main Hall · 9:00 AM' },
+      { month: 'Oct', day: '05', title: 'Parent-Teacher Meeting', location: 'Karen Campus · All day' },
+      { month: 'Oct', day: '19', title: 'Inter-House Athletics', location: 'Playing Field · 8:00 AM' },
+      { month: 'Nov', day: '09', title: 'Greenhill Family Fun Run', location: 'Forest Trail · 7:00 AM' },
+      { month: 'Nov', day: '23', title: 'End of Year Production', location: 'Main Hall · 6:00 PM' },
+      { month: 'Dec', day: '05', title: 'Prize Giving & Graduation', location: 'Main Hall · 10:00 AM' }
+    ];
+
+    const calendarEvents = [22, 25, 30]; // days in Sept 2026 that have events
+
+    /* ============================================================
+       DOM READY
+       ============================================================ */
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set today's date on dashboard
+      const today = new Date(2026, 8, 17); // 17 Sept 2026
+      document.getElementById('todayDate').textContent =
+        today.toLocaleDateString('en-GB', {
+          weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+        });
+
+      renderGrades();
+      renderNotifications();
+      renderEvents();
+      renderCalendar();
+    });
+
+    /* ============================================================
+       LOGIN
+       ============================================================ */
+    const loginForm = document.getElementById('loginForm');
+    const loginBtn = document.getElementById('loginBtn');
+    const loginError = document.getElementById('loginError');
+    const loginErrorText = document.getElementById('loginErrorText');
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('loginPassword');
+
+    togglePassword.addEventListener('click', () => {
+      const type = passwordInput.type === 'password' ? 'text' : 'password';
+      passwordInput.type = type;
+      togglePassword.innerHTML = type === 'password'
+        ? '<i class="fas fa-eye"></i>'
+        : '<i class="fas fa-eye-slash"></i>';
+    });
+
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      loginError.classList.remove('show');
+
+      const email = document.getElementById('loginEmail').value.trim();
+      const password = passwordInput.value;
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        loginErrorText.textContent = 'Please enter a valid email address.';
+        loginError.classList.add('show');
+        return;
+      }
+
+      if (!password || password.length < 4) {
+        loginErrorText.textContent = 'Please enter your password (minimum 4 characters).';
+        loginError.classList.add('show');
+        return;
+      }
+
+      loginBtn.disabled = true;
+      loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing in...';
+
+      setTimeout(() => {
+        document.getElementById('loginPage').style.display = 'none';
+        document.getElementById('dashboard').classList.add('active');
+        toast('Welcome back, Grace!');
+      }, 1200);
+    });
+
+    /* ============================================================
+       LOGOUT
+       ============================================================ */
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      if (!confirm('Sign out of the Parent Portal?')) return;
+      document.getElementById('dashboard').classList.remove('active');
+      document.getElementById('loginPage').style.display = 'grid';
+      loginForm.reset();
+      loginBtn.disabled = false;
+      loginBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Sign In';
+    });
+
+    /* ============================================================
+       VIEW SWITCHING
+       ============================================================ */
+    const viewTitles = {
+      dashboard: 'Dashboard',
+      fees: 'Fees & Payments',
+      grades: 'Grades & Reports',
+      progress: 'Progress',
+      notifications: 'Notifications',
+      calendar: 'School Calendar',
+      profile: 'Student Profile'
+    };
+
+    function switchView(viewName) {
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      const target = document.getElementById('view-' + viewName);
+      if (target) target.classList.add('active');
+
+      document.querySelectorAll('.nav-item').forEach(item => {
+        item.classList.toggle('active', item.dataset.view === viewName);
+      });
+
+      document.getElementById('topbarTitle').textContent = viewTitles[viewName] || 'Dashboard';
+      document.querySelector('.content').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // Close mobile sidebar
+      if (window.innerWidth <= 1100) closeSidebar();
+    }
+
+    document.querySelectorAll('.nav-item').forEach(item => {
+      item.addEventListener('click', () => switchView(item.dataset.view));
+    });
+
+    // Notification bell → goes to notifications view
+    document.getElementById('notifBtn').addEventListener('click', () => switchView('notifications'));
+
+    /* ============================================================
+       MOBILE SIDEBAR
+       ============================================================ */
+    const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const menuToggle = document.getElementById('menuToggle');
+
+    function openSidebar() {
+      sidebar.classList.add('open');
+      sidebarOverlay.classList.add('active');
+    }
+    function closeSidebar() {
+      sidebar.classList.remove('open');
+      sidebarOverlay.classList.remove('active');
+    }
+    menuToggle.addEventListener('click', openSidebar);
+    sidebarOverlay.addEventListener('click', closeSidebar);
+
+    /* ============================================================
+       RENDER GRADES
+       ============================================================ */
+    function renderGrades() {
+      const tbody = document.getElementById('gradesBody');
+      tbody.innerHTML = gradesData.map(g => {
+        const avg = Math.round((g.ca1 + g.ca2 + g.exam) / 3);
+        let gradeClass = 'c', gradeLetter = 'C';
+        if (avg >= 80) { gradeClass = 'a'; gradeLetter = 'A'; }
+        else if (avg >= 70) { gradeClass = 'b'; gradeLetter = 'B'; }
+        else if (avg >= 60) { gradeClass = 'c'; gradeLetter = 'C'; }
+        else { gradeClass = 'd'; gradeLetter = 'D'; }
+
+        return `
+          <tr>
+            <td><strong>${g.subject}</strong></td>
+            <td>${g.teacher}</td>
+            <td>${g.ca1}</td>
+            <td>${g.ca2}</td>
+            <td>${g.exam}</td>
+            <td><strong>${avg}%</strong></td>
+            <td><span class="grade-pill ${gradeClass}">${gradeLetter}</span></td>
+            <td><button class="btn-download" onclick="downloadSubjectReport('${g.subject}')"><i class="fas fa-download"></i></button></td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    /* ============================================================
+       RENDER NOTIFICATIONS
+       ============================================================ */
+    function renderNotifications() {
+      const html = notificationsData.map(n => `
+        <div class="notif-item ${n.unread ? 'unread' : ''}" onclick="markRead(${n.id})">
+          <div class="notif-icon ${n.color}">
+            <i class="fas fa-${n.icon}"></i>
+          </div>
+          <div class="notif-content">
+            <div class="notif-title">${n.title}</div>
+            <div class="notif-meta">
+              <span>${n.text}</span>
+            </div>
+          </div>
+          <div class="notif-time">${n.time}</div>
+        </div>
+      `).join('');
+
+      document.getElementById('dashNotifList').innerHTML = notificationsData.slice(0, 4).map(n => `
+        <div class="notif-item ${n.unread ? 'unread' : ''}" onclick="markRead(${n.id})">
+          <div class="notif-icon ${n.color}"><i class="fas fa-${n.icon}"></i></div>
+          <div class="notif-content">
+            <div class="notif-title">${n.title}</div>
+            <div class="notif-meta"><span>${n.time}</span></div>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('fullNotifList').innerHTML = html;
+    }
+
+    function markRead(id) {
+      const notif = notificationsData.find(n => n.id === id);
+      if (notif) notif.unread = false;
+      renderNotifications();
+    }
+
+    function markAllRead() {
+      notificationsData.forEach(n => n.unread = false);
+      renderNotifications();
+      toast('All notifications marked as read.');
+    }
+
+    /* ============================================================
+       RENDER EVENTS
+       ============================================================ */
+    function renderEvents() {
+      const html = eventsData.map(e => `
+        <div class="event-row">
+          <div class="event-date-mini">
+            <div class="month">${e.month}</div>
+            <div class="day">${e.day}</div>
+          </div>
+          <div class="event-details">
+            <h5>${e.title}</h5>
+            <p><i class="fas fa-map-marker-alt"></i> ${e.location}</p>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('dashEventsList').innerHTML = eventsData.slice(0, 3).map(e => `
+        <div class="event-row">
+          <div class="event-date-mini">
+            <div class="month">${e.month}</div>
+            <div class="day">${e.day}</div>
+          </div>
+          <div class="event-details">
+            <h5>${e.title}</h5>
+            <p><i class="fas fa-map-marker-alt"></i> ${e.location}</p>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('fullEventsList').innerHTML = html;
+    }
+
+    /* ============================================================
+       RENDER CALENDAR
+       ============================================================ */
+    function renderCalendar() {
+      const grid = document.getElementById('calendarGrid');
+      const dayNames = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+      let html = dayNames.map(d => `<div class="cal-day-name">${d}</div>`).join('');
+
+      // September 2026: 1st is a Tuesday. Using Mon-first grid.
+      // Sept 1, 2026 = Tuesday → offset by 1 (Mon = empty)
+      const firstDayOffset = 1; // Monday of that week is empty
+      const daysInMonth = 30;
+      const todayDate = 17;
+
+      // Empty cells before the 1st
+      for (let i = 0; i < firstDayOffset; i++) {
+        html += `<div class="cal-day empty"></div>`;
+      }
+
+      // Days
+      for (let d = 1; d <= daysInMonth; d++) {
+        const date = new Date(2026, 8, d);
+        const dow = date.getDay(); // 0=Sun, 6=Sat
+        let classes = 'cal-day';
+        if (dow === 0 || dow === 6) classes += ' weekend';
+        if (d === todayDate) classes += ' today';
+        if (calendarEvents.includes(d)) classes += ' event';
+
+        html += `<div class="${classes}">${d}</div>`;
+      }
+
+      grid.innerHTML = html;
+    }
+
+    /* ============================================================
+       DOWNLOAD / PAY ACTIONS
+       ============================================================ */
+    function downloadReceipt(ref) {
+      toast(`Preparing receipt ${ref} for download...`);
+    }
+    function downloadStatement(term) {
+      toast(`Preparing fee statement ${term}...`);
+    }
+    function downloadReport(term) {
+      if (term) toast(`Preparing report card for ${term}...`);
+      else toast('Preparing full academic report (PDF)...');
+    }
+    function downloadSubjectReport(subject) {
+      toast(`Preparing ${subject} report...`);
+    }
+    function downloadCalendar() {
+      toast('Preparing school calendar (PDF)...');
+    }
+    function payNow(ref, amount) {
+      toast(`Opening payment for ${ref} — KES ${amount.toLocaleString()}...`);
+    }
+
+    /* ============================================================
+       TOAST
+       ============================================================ */
+    function toast(message) {
+      const container = document.getElementById('toastContainer');
+      const el = document.createElement('div');
+      el.className = 'toast';
+      el.innerHTML = `<i class="fas fa-check-circle"></i><span>${message}</span>`;
+      container.appendChild(el);
+      setTimeout(() => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateX(40px)';
+        setTimeout(() => el.remove(), 300);
+      }, 3200);
+    }
+
+    // Expose switchView for inline onclick handlers
+    window.switchView = switchView;
+    window.downloadReceipt = downloadReceipt;
+    window.downloadStatement = downloadStatement;
+    window.downloadReport = downloadReport;
+    window.downloadSubjectReport = downloadSubjectReport;
+    window.downloadCalendar = downloadCalendar;
+    window.payNow = payNow;
+    window.toast = toast;
+    window.markRead = markRead;
+    window.markAllRead = markAllRead;
+  </script>
+<script type="module" src="js/cms.js"></script>
+</body>
+</html>

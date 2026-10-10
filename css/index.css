@@ -1,0 +1,850 @@
+/* ============================================================
+   THE GREENHILL SCHOOL â€” index.html page-specific styles
+   Load AFTER css/style.css (shared site styles).
+   ============================================================ */
+
+    /* ============================================================
+       7. HERO
+       ============================================================ */
+    .hero {
+      background: var(--ivory);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      min-height: 620px;
+      align-items: stretch;
+    }
+
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(27, 42, 74, 0.15) 0%,
+        rgba(27, 42, 74, 0.05) 100%
+      );
+    }
+
+    .hero-content {
+      background: var(--navy);
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Crest watermark */
+    .hero-content::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 220px;
+      height: 260px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120' fill='none' stroke='%23C9A227' stroke-width='0.8' opacity='0.15'%3E%3Cpath d='M50 5 L92 25 L92 70 Q92 100 50 115 Q8 100 8 70 L8 25 Z'/%3E%3Cpath d='M50 25 L50 90'/%3E%3Cpath d='M30 50 L70 50'/%3E%3Ccircle cx='50' cy='42' r='8'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 26px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-kicker::before {
+      content: '';
+      width: 30px;
+      height: 1.5px;
+      background: var(--gold);
+    }
+
+    .hero-content h1 {
+      color: var(--ivory);
+      font-size: 3rem;
+      line-height: 1.12;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content h1 em {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 400;
+    }
+
+    .hero-lede {
+      color: rgba(250, 247, 240, 0.82);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 34px;
+      position: relative;
+      z-index: 2;
+      max-width: 480px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 34px;
+    }
+
+    .hero-trust {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      padding-top: 26px;
+      border-top: 1px solid rgba(250, 247, 240, 0.15);
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: rgba(250, 247, 240, 0.75);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .hero-trust-item i { color: var(--gold); font-size: 0.85rem; }
+
+    /* ============================================================
+       8. STATS BAND
+       ============================================================ */
+    .stats-band {
+      background: var(--navy-dark);
+      padding: 54px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stats-band::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(
+        90deg,
+        var(--crimson) 0%,
+        var(--crimson) 33%,
+        var(--gold) 33%,
+        var(--gold) 66%,
+        var(--forest) 66%,
+        var(--forest) 100%
+      );
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 15%;
+      height: 70%;
+      width: 1px;
+      background: rgba(201, 162, 39, 0.25);
+    }
+
+    .stat-number {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: rgba(250, 247, 240, 0.7);
+    }
+
+    /* ============================================================
+       9. WHY GREENHILL (Pillars)
+       ============================================================ */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .pillar-card {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--crimson);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .pillar-card:hover::before { transform: scaleX(1); }
+
+    .pillar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--crimson);
+    }
+
+    .pillar-icon {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      background: var(--navy);
+      color: var(--gold);
+      border-radius: var(--radius);
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .pillar-card:hover .pillar-icon {
+      background: var(--crimson);
+      color: var(--ivory);
+      transform: scale(1.05) rotate(-4deg);
+    }
+
+    .pillar-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 12px;
+    }
+
+    .pillar-card p {
+      font-size: 0.92rem;
+      color: var(--charcoal-light);
+      line-height: 1.75;
+      margin-bottom: 18px;
+    }
+
+    /* ============================================================
+       10. HEAD'S WELCOME
+       ============================================================ */
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .welcome-portrait {
+      position: relative;
+    }
+
+    .welcome-portrait img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .welcome-portrait::after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: -20px;
+      bottom: -20px;
+      border: 2px solid var(--gold);
+      border-radius: var(--radius-xl);
+      z-index: -1;
+    }
+
+    .welcome-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .welcome-content h2 {
+      font-size: 2.1rem;
+      margin-bottom: 22px;
+      line-height: 1.2;
+    }
+
+    .welcome-content p {
+      font-size: 1.02rem;
+      color: var(--charcoal-light);
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+
+    .welcome-content .signature {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .signature-name {
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .signature-title {
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--crimson);
+      font-weight: 700;
+    }
+
+    /* ============================================================
+       11. DAY IN THE LIFE
+       ============================================================ */
+    .day-section {
+      position: relative;
+      padding: 0;
+      background: var(--ivory);
+    }
+
+    .day-hero {
+      height: 400px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .day-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .day-card {
+      background: var(--ivory);
+      max-width: 1100px;
+      margin: -100px auto 0;
+      padding: 50px 60px;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      position: relative;
+      z-index: 2;
+      border: 1px solid var(--border-light);
+    }
+
+    .day-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .day-schedule {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .day-item {
+      padding: 20px;
+      background: var(--stone);
+      border-radius: var(--radius);
+      transition: var(--transition);
+      border-left: 3px solid var(--gold);
+    }
+
+    .day-item:hover {
+      background: var(--navy);
+      border-left-color: var(--crimson);
+      transform: translateX(4px);
+    }
+
+    .day-item:hover .day-time,
+    .day-item:hover .day-title,
+    .day-item:hover .day-desc {
+      color: var(--ivory);
+    }
+
+    .day-time {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+      transition: var(--transition);
+    }
+
+    .day-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 4px;
+      transition: var(--transition);
+    }
+
+    .day-desc {
+      font-size: 0.85rem;
+      color: var(--charcoal-light);
+      line-height: 1.5;
+      transition: var(--transition);
+    }
+
+    /* ============================================================
+       12. CAMPUS GRID
+       ============================================================ */
+    .campus-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .campus-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      cursor: pointer;
+    }
+
+    .campus-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .campus-card:hover img { transform: scale(1.08); }
+
+    .campus-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(27, 42, 74, 0.92) 0%,
+        rgba(27, 42, 74, 0.5) 40%,
+        transparent 100%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+      transition: var(--transition);
+    }
+
+    .campus-card:hover .campus-card-overlay {
+      background: linear-gradient(
+        to top,
+        rgba(166, 25, 46, 0.92) 0%,
+        rgba(166, 25, 46, 0.5) 40%,
+        transparent 100%
+      );
+    }
+
+    .campus-card-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--gold);
+      color: var(--navy-dark);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: var(--radius-full);
+      margin-bottom: 12px;
+      align-self: flex-start;
+    }
+
+    .campus-card h3 {
+      color: var(--ivory);
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    .campus-card p {
+      color: rgba(250, 247, 240, 0.85);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       13. TESTIMONIALS
+       ============================================================ */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .testimonial-card {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px 30px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 30px;
+      font-family: 'Libre Baskerville', serif;
+      font-size: 5rem;
+      color: var(--gold);
+      line-height: 1;
+      opacity: 0.35;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--crimson);
+    }
+
+    .testimonial-quote {
+      font-family: 'Libre Baskerville', serif;
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--charcoal);
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .testimonial-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-full);
+      background: var(--navy);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .testimonial-name {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    .testimonial-role {
+      font-size: 0.78rem;
+      color: var(--crimson);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* ============================================================
+       14. NEWS
+       ============================================================ */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .news-card {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--crimson);
+    }
+
+    .news-image {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .news-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .news-card:hover .news-image img { transform: scale(1.06); }
+
+    .news-category {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      padding: 5px 12px;
+      background: var(--crimson);
+      color: var(--ivory);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+    }
+
+    .news-body {
+      padding: 24px 26px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-date {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .news-body h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      line-height: 1.35;
+      flex-shrink: 0;
+    }
+
+    .news-body p {
+      font-size: 0.88rem;
+      color: var(--charcoal-light);
+      line-height: 1.65;
+      margin-bottom: 18px;
+      flex: 1;
+    }
+
+    /* ============================================================
+       15. CTA BAND
+       ============================================================ */
+    .cta-band {
+      background: var(--navy);
+      padding: 90px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 460px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120' fill='none' stroke='%23C9A227' stroke-width='0.6' opacity='0.12'%3E%3Cpath d='M50 5 L92 25 L92 70 Q92 100 50 115 Q8 100 8 70 L8 25 Z'/%3E%3Cpath d='M50 25 L50 90'/%3E%3Cpath d='M30 50 L70 50'/%3E%3Ccircle cx='50' cy='42' r='8'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .cta-band::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -60px;
+      width: 300px;
+      height: 340px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120' fill='none' stroke='%23C9A227' stroke-width='0.6' opacity='0.08'%3E%3Cpath d='M50 5 L92 25 L92 70 Q92 100 50 115 Q8 100 8 70 L8 25 Z'/%3E%3Cpath d='M50 25 L50 90'/%3E%3Cpath d='M30 50 L70 50'/%3E%3Ccircle cx='50' cy='42' r='8'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .cta-band .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .cta-band h2 {
+      color: var(--ivory);
+      font-size: 2.5rem;
+      margin-bottom: 18px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-band h2 em {
+      color: var(--gold);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .cta-band p {
+      color: rgba(250, 247, 240, 0.8);
+      font-size: 1.08rem;
+      max-width: 620px;
+      margin: 0 auto 36px;
+      line-height: 1.75;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================================
+       18. RESPONSIVE — TABLET
+       ============================================================ */
+    @media (max-width: 1024px) {
+      h1 { font-size: 2.4rem; }
+      h2 { font-size: 1.9rem; }
+
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-image { min-height: 400px; }
+      .hero-content { padding: 60px 40px; }
+
+      .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 30px; }
+      .stat-item:nth-child(3)::after { display: none; }
+
+      .pillars-grid { grid-template-columns: 1fr; }
+      .welcome-grid { grid-template-columns: 1fr; gap: 40px; }
+      .welcome-portrait img { height: 420px; }
+
+      .day-schedule { grid-template-columns: repeat(2, 1fr); }
+      .campus-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .news-grid { grid-template-columns: 1fr 1fr; }
+
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .footer-brand { grid-column: 1 / -1; max-width: none; }
+
+      
+      
+      
+      
+
+      
+
+      
+    }
+
+    /* ============================================================
+       19. RESPONSIVE — MOBILE
+       ============================================================ */
+    @media (max-width: 640px) {
+      h1 { font-size: 1.9rem; }
+      h2 { font-size: 1.55rem; }
+      .section { padding: 60px 0; }
+
+      .top-strip { font-size: 0.7rem; }
+      .top-strip-right { display: none; }
+
+      .hero-content { padding: 50px 24px; }
+      .hero-content h1 { font-size: 2rem; }
+      .hero-lede { font-size: 0.98rem; }
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .hero-ctas .btn { width: 100%; }
+      .hero-trust { gap: 14px; }
+      .hero-trust-item { font-size: 0.7rem; }
+
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .stat-item:nth-child(2n)::after { display: none; }
+      .stat-item:nth-child(3)::after { display: block; }
+      .stat-number { font-size: 2rem; }
+
+      .welcome-portrait img { height: 340px; }
+      .welcome-portrait::after { display: none; }
+
+      .day-card { padding: 32px 24px; margin-top: -60px; }
+      .day-schedule { grid-template-columns: 1fr; }
+
+      .campus-grid { grid-template-columns: 1fr; }
+      .campus-card { aspect-ratio: 4/3; }
+
+      .news-grid { grid-template-columns: 1fr; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+
+      .cta-band { padding: 60px 0; }
+      .cta-band h2 { font-size: 1.75rem; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .cta-buttons .btn { width: 100%; max-width: 320px; }
+
+      
+    }
+

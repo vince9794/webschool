@@ -1,0 +1,22 @@
+{
+  "name": "greenhill-school-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Greenhill School website + admin management platform (content CMS, media library, subscriber messaging).",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js",
+    "stage": "node tools/stage.js",
+    "harness": "node tools/function-server.js",
+    "deploy": "npx --yes netlify-cli deploy --build --prod"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^11.1.3",
+    "express": "^4.21.2",
+    "web-push": "^3.6.7"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

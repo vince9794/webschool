@@ -1,0 +1,688 @@
+/* ============================================================
+   THE GREENHILL SCHOOL â€” campus.html page-specific styles
+   Load AFTER css/style.css (shared site styles).
+   ============================================================ */
+
+    /* ============================================================
+       6. PAGE HERO
+       ============================================================ */
+    .page-hero {
+      position: relative; min-height: 460px;
+      display: flex; align-items: center;
+      overflow: hidden; background: var(--navy);
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      background-repeat: no-repeat;
+    }
+    .page-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg,
+        rgba(27, 42, 74, 0.92) 0%,
+        rgba(27, 42, 74, 0.78) 50%,
+        rgba(27, 42, 74, 0.65) 100%);
+    }
+    .page-hero-content {
+      position: relative; z-index: 3;
+      padding: 100px 0 80px; text-align: center;
+      max-width: 820px; margin: 0 auto;
+    }
+    .page-hero-kicker {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 7px 18px;
+      background: rgba(201, 162, 39, 0.15);
+      border: 1px solid rgba(201, 162, 39, 0.35);
+      color: var(--gold); font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: var(--radius-full); margin-bottom: 24px;
+    }
+    .page-hero-content h1 {
+      color: var(--ivory); font-size: 3.2rem;
+      line-height: 1.15; margin-bottom: 18px;
+    }
+    .page-hero-content h1 em {
+      font-style: italic; color: var(--gold); font-weight: 400;
+    }
+    .page-hero-content p {
+      color: rgba(250, 247, 240, 0.82);
+      font-size: 1.08rem; line-height: 1.8;
+      max-width: 640px; margin: 0 auto 28px;
+    }
+    .breadcrumb {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; font-size: 0.78rem;
+      font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .breadcrumb a { color: rgba(250, 247, 240, 0.65); }
+    .breadcrumb a:hover { color: var(--gold); }
+    .breadcrumb span { color: rgba(250, 247, 240, 0.35); }
+    .breadcrumb .current { color: var(--gold); font-weight: 700; }
+
+    /* ============================================================
+       7. INTRO — 5-ACRE CAMPUS
+       ============================================================ */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .intro-content h2 {
+      font-size: 2.15rem; margin-bottom: 24px; line-height: 1.2;
+    }
+    .intro-content p {
+      font-size: 1.02rem; color: var(--charcoal-light);
+      line-height: 1.9; margin-bottom: 20px;
+    }
+    .intro-content p:first-of-type::first-letter {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 4rem; font-weight: 700;
+      float: left; line-height: 0.85;
+      padding: 8px 14px 0 0; color: var(--crimson);
+    }
+    .intro-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+    }
+    .intro-feature {
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .intro-feature-icon {
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--navy); color: var(--gold);
+      border-radius: var(--radius-sm);
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .intro-feature h4 {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.92rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 3px;
+    }
+    .intro-feature p {
+      font-size: 0.82rem; color: var(--charcoal-light);
+      line-height: 1.5; margin: 0;
+    }
+    .intro-image {
+      position: relative;
+    }
+    .intro-image img {
+      width: 100%; height: 540px;
+      object-fit: cover;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+    }
+    .intro-image-caption {
+      position: absolute; bottom: 24px; left: 24px; right: 24px;
+      background: rgba(250, 247, 240, 0.96);
+      backdrop-filter: blur(10px);
+      padding: 20px 24px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      border-left: 4px solid var(--gold);
+    }
+    .intro-image-caption strong {
+      display: block; font-family: 'Libre Baskerville', serif;
+      font-size: 0.95rem; color: var(--navy); margin-bottom: 4px;
+    }
+    .intro-image-caption span {
+      font-size: 0.82rem; color: var(--charcoal-light); line-height: 1.5;
+    }
+
+    /* ============================================================
+       8. FACILITIES
+       ============================================================ */
+    .facilities-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .facility-card {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+      position: relative;
+    }
+    .facility-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--crimson);
+    }
+    .facility-image {
+      aspect-ratio: 16/10; overflow: hidden; position: relative;
+    }
+    .facility-image img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .facility-card:hover .facility-image img { transform: scale(1.06); }
+    .facility-tag {
+      position: absolute; top: 16px; left: 16px;
+      padding: 5px 12px;
+      background: var(--navy); color: var(--gold);
+      font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      border-radius: var(--radius-sm);
+    }
+    .facility-body {
+      padding: 24px 26px 28px;
+    }
+    .facility-body h3 {
+      font-size: 1.2rem; margin-bottom: 10px;
+    }
+    .facility-body p {
+      font-size: 0.88rem; color: var(--charcoal-light);
+      line-height: 1.75;
+    }
+
+    /* ============================================================
+       9. A DAY IN THE LIFE
+       ============================================================ */
+    .day-section {
+      position: relative; padding: 0; background: var(--ivory);
+    }
+    .day-hero {
+      height: 400px; overflow: hidden; position: relative;
+    }
+    .day-hero img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .day-hero::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(27, 42, 74, 0.1) 0%,
+        rgba(27, 42, 74, 0.5) 100%);
+    }
+    .day-card {
+      background: var(--ivory);
+      max-width: 1100px; margin: -100px auto 0;
+      padding: 50px 60px;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      position: relative; z-index: 2;
+      border: 1px solid var(--border-light);
+    }
+    .day-card-header {
+      text-align: center; margin-bottom: 40px;
+    }
+    .day-card-header h3 {
+      font-size: 1.6rem; margin-bottom: 8px;
+    }
+    .day-card-header p {
+      font-size: 0.95rem; color: var(--charcoal-light);
+    }
+    .day-timeline {
+      display: flex; flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+    .day-timeline::before {
+      content: '';
+      position: absolute;
+      left: 84px; top: 10px; bottom: 10px;
+      width: 2px;
+      background: linear-gradient(180deg,
+        var(--gold) 0%,
+        var(--crimson) 50%,
+        var(--forest) 100%);
+      border-radius: 2px;
+    }
+    .day-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 40px;
+      padding: 18px 0;
+      align-items: center;
+      position: relative;
+      transition: var(--transition);
+    }
+    .day-item:hover { transform: translateX(6px); }
+    .day-time {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--navy);
+      text-align: right;
+      padding-right: 12px;
+      letter-spacing: 0.5px;
+    }
+    .day-item:hover .day-time { color: var(--crimson); }
+    .day-content {
+      position: relative;
+      padding-left: 20px;
+    }
+    .day-dot {
+      position: absolute;
+      left: -20px; top: 50%;
+      transform: translateY(-50%);
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--ivory);
+      border: 3px solid var(--crimson);
+      z-index: 2;
+      transition: var(--transition);
+    }
+    .day-item:hover .day-dot {
+      transform: translateY(-50%) scale(1.3);
+      background: var(--crimson);
+    }
+    .day-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 4px;
+    }
+    .day-desc {
+      font-size: 0.85rem; color: var(--charcoal-light);
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       10. CLUBS
+       ============================================================ */
+    .clubs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .club-card {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .club-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .club-card:nth-child(1)::before { background: var(--gold); }
+    .club-card:nth-child(2)::before { background: var(--crimson); }
+    .club-card:nth-child(3)::before { background: var(--forest); }
+    .club-card:nth-child(4)::before { background: var(--navy); }
+    .club-card:nth-child(5)::before { background: var(--gold); }
+    .club-card:nth-child(6)::before { background: var(--crimson); }
+    .club-card:nth-child(7)::before { background: var(--forest); }
+    .club-card:nth-child(8)::before { background: var(--navy); }
+    .club-card:nth-child(9)::before { background: var(--gold); }
+
+    .club-card:hover::before { transform: scaleX(1); }
+    .club-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold);
+    }
+
+    .club-icon {
+      width: 52px; height: 52px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--navy); color: var(--gold);
+      border-radius: var(--radius);
+      font-size: 1.25rem;
+      margin-bottom: 18px;
+      transition: var(--transition);
+    }
+    .club-card:hover .club-icon {
+      background: var(--crimson); color: var(--ivory);
+      transform: scale(1.08) rotate(-6deg);
+    }
+    .club-card h3 {
+      font-size: 1.05rem; margin-bottom: 8px;
+    }
+    .club-card p {
+      font-size: 0.85rem; color: var(--charcoal-light);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+    .club-meta {
+      display: flex; align-items: center; gap: 8px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-light);
+      font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--charcoal-light);
+    }
+    .club-meta i { color: var(--gold); font-size: 0.72rem; }
+
+    /* ============================================================
+       11. ATHLETICS (dark navy section)
+       ============================================================ */
+    .athletics-section {
+      background: var(--navy);
+      padding: 90px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .athletics-section::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 340px; height: 400px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120' fill='none' stroke='%23C9A227' stroke-width='0.6' opacity='0.1'%3E%3Cpath d='M50 5 L92 25 L92 70 Q92 100 50 115 Q8 100 8 70 L8 25 Z'/%3E%3Cpath d='M50 25 L50 90'/%3E%3Cpath d='M30 50 L70 50'/%3E%3Ccircle cx='50' cy='42' r='8'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .athletics-section .container { position: relative; z-index: 2; }
+
+    .athletics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .athletics-content .kicker { color: var(--gold); }
+    .athletics-content .kicker::before,
+    .athletics-content .kicker::after { background: var(--gold); }
+    .athletics-content h2 {
+      color: var(--ivory);
+      font-size: 2.2rem;
+      margin-bottom: 22px;
+      line-height: 1.2;
+    }
+    .athletics-content h2 em {
+      color: var(--gold); font-style: italic; font-weight: 400;
+    }
+    .athletics-content > p {
+      color: rgba(250, 247, 240, 0.82);
+      font-size: 1rem; line-height: 1.9;
+      margin-bottom: 30px;
+    }
+    .sports-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .sport-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 14px 18px;
+      background: rgba(250, 247, 240, 0.06);
+      border: 1px solid rgba(201, 162, 39, 0.2);
+      border-radius: var(--radius);
+      transition: var(--transition);
+      font-size: 0.88rem;
+      color: rgba(250, 247, 240, 0.9);
+      font-weight: 600;
+    }
+    .sport-item:hover {
+      background: rgba(201, 162, 39, 0.15);
+      border-color: var(--gold);
+      transform: translateX(4px);
+    }
+    .sport-item i {
+      color: var(--gold);
+      font-size: 1rem;
+      width: 22px;
+      text-align: center;
+    }
+    .athletics-image {
+      position: relative;
+    }
+    .athletics-image img {
+      width: 100%; height: 520px;
+      object-fit: cover;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+    }
+    .athletics-badge {
+      position: absolute;
+      bottom: 24px; left: 24px;
+      background: var(--gold);
+      color: var(--navy-dark);
+      padding: 14px 22px;
+      border-radius: var(--radius-lg);
+      font-family: 'Libre Baskerville', serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-lg);
+    }
+    .athletics-badge span {
+      display: block;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 4px;
+    }
+
+    /* ============================================================
+       12. ARTS & MUSIC
+       ============================================================ */
+    .arts-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .art-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      cursor: pointer;
+    }
+    .art-card img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .art-card:hover img { transform: scale(1.08); }
+    .art-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top,
+        rgba(27, 42, 74, 0.95) 0%,
+        rgba(27, 42, 74, 0.5) 45%,
+        transparent 100%);
+      display: flex; flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      transition: var(--transition);
+    }
+    .art-card:hover .art-overlay {
+      background: linear-gradient(to top,
+        rgba(166, 25, 46, 0.95) 0%,
+        rgba(166, 25, 46, 0.5) 45%,
+        transparent 100%);
+    }
+    .art-card h3 {
+      color: var(--ivory);
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+    .art-card p {
+      color: rgba(250, 247, 240, 0.85);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    /* ============================================================
+       13. BEYOND CAMPUS (excursions)
+       ============================================================ */
+    .beyond-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .beyond-image {
+      position: relative;
+    }
+    .beyond-image img {
+      width: 100%; height: 520px;
+      object-fit: cover;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+    }
+    .beyond-content h2 {
+      font-size: 2.1rem; margin-bottom: 22px; line-height: 1.2;
+    }
+    .beyond-content > p {
+      font-size: 1.02rem; color: var(--charcoal-light);
+      line-height: 1.9; margin-bottom: 20px;
+    }
+    .excursion-list {
+      display: flex; flex-direction: column;
+      gap: 16px;
+      margin-top: 28px;
+      padding-top: 26px;
+      border-top: 1px solid var(--border);
+    }
+    .excursion-item {
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .excursion-icon {
+      width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      background: var(--navy); color: var(--gold);
+      border-radius: var(--radius);
+      font-size: 1.05rem;
+    }
+    .excursion-item h4 {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--navy); margin-bottom: 4px;
+    }
+    .excursion-item p {
+      font-size: 0.86rem; color: var(--charcoal-light);
+      line-height: 1.6; margin: 0;
+    }
+
+    /* ============================================================
+       14. CTA BAND
+       ============================================================ */
+    .cta-band {
+      background: var(--navy);
+      padding: 90px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-band::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 400px; height: 460px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120' fill='none' stroke='%23C9A227' stroke-width='0.6' opacity='0.12'%3E%3Cpath d='M50 5 L92 25 L92 70 Q92 100 50 115 Q8 100 8 70 L8 25 Z'/%3E%3Cpath d='M50 25 L50 90'/%3E%3Cpath d='M30 50 L70 50'/%3E%3Ccircle cx='50' cy='42' r='8'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .cta-band .container {
+      position: relative; z-index: 2; text-align: center;
+    }
+    .cta-band h2 {
+      color: var(--ivory); font-size: 2.5rem;
+      margin-bottom: 18px; max-width: 720px;
+      margin-left: auto; margin-right: auto;
+    }
+    .cta-band h2 em {
+      color: var(--gold); font-style: italic; font-weight: 400;
+    }
+    .cta-band p {
+      color: rgba(250, 247, 240, 0.8);
+      font-size: 1.08rem; max-width: 620px;
+      margin: 0 auto 36px; line-height: 1.75;
+    }
+    .cta-buttons {
+      display: flex; justify-content: center;
+      gap: 16px; flex-wrap: wrap;
+    }
+
+    /* ============================================================
+       17. RESPONSIVE — TABLET
+       ============================================================ */
+    @media (max-width: 1024px) {
+      h1 { font-size: 2.4rem; }
+      h2 { font-size: 1.9rem; }
+      .page-hero-content h1 { font-size: 2.5rem; }
+
+      .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+      .intro-image img { height: 420px; }
+
+      .facilities-grid { grid-template-columns: 1fr 1fr; }
+
+      .day-card { padding: 40px 32px; margin-top: -80px; }
+      .day-timeline::before { left: 64px; }
+      .day-item { grid-template-columns: 52px 1fr; gap: 30px; }
+
+      .clubs-grid { grid-template-columns: 1fr 1fr; }
+
+      .athletics-grid { grid-template-columns: 1fr; gap: 40px; }
+      .athletics-image img { height: 420px; }
+
+      .arts-grid { grid-template-columns: 1fr 1fr; }
+
+      .beyond-layout { grid-template-columns: 1fr; gap: 40px; }
+      .beyond-image img { height: 420px; }
+
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .footer-brand { grid-column: 1 / -1; max-width: none; }
+
+      
+      
+      
+
+      
+      
+    }
+
+    /* ============================================================
+       18. RESPONSIVE — MOBILE
+       ============================================================ */
+    @media (max-width: 640px) {
+      h1 { font-size: 1.9rem; }
+      h2 { font-size: 1.55rem; }
+      .section { padding: 60px 0; }
+
+      .top-strip { font-size: 0.7rem; }
+      .top-strip-right { display: none; }
+
+      .page-hero-content { padding: 80px 0 60px; }
+      .page-hero-content h1 { font-size: 1.9rem; }
+      .page-hero-content p { font-size: 0.98rem; }
+
+      .intro-image img { height: 340px; }
+      .intro-content p:first-of-type::first-letter { font-size: 3rem; }
+      .intro-features { grid-template-columns: 1fr; }
+
+      .facilities-grid { grid-template-columns: 1fr; }
+
+      .day-hero { height: 240px; }
+      .day-card { padding: 30px 22px; margin-top: -50px; }
+      .day-timeline::before { left: 44px; }
+      .day-item {
+        grid-template-columns: 40px 1fr;
+        gap: 20px; padding: 14px 0;
+      }
+      .day-time { font-size: 0.78rem; padding-right: 8px; }
+      .day-title { font-size: 0.92rem; }
+      .day-desc { font-size: 0.78rem; }
+
+      .clubs-grid { grid-template-columns: 1fr; }
+
+      .sports-list { grid-template-columns: 1fr; }
+      .athletics-image img { height: 320px; }
+
+      .arts-grid { grid-template-columns: 1fr; }
+
+      .beyond-image img { height: 340px; }
+
+      .cta-band { padding: 60px 0; }
+      .cta-band h2 { font-size: 1.75rem; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .cta-buttons .btn { width: 100%; max-width: 320px; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      
+    }
+

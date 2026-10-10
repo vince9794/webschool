@@ -1,0 +1,39 @@
+# =============================================================
+# THE GREENHILL SCHOOL — Netlify configuration
+# -------------------------------------------------------------
+# The admin platform needs serverless functions, which run on
+# Git-based deploys or Netlify CLI deploys (drag & drop only
+# uploads static files). See README.md for deploy steps.
+# =============================================================
+
+[build]
+  command = "npm run stage"
+  publish = "publish"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Every /api/... request is rewritten to the matching function.
+# Two endpoints have a path suffix, so they get explicit rules
+# mapping them to their own (flat) function files — the splat
+# rule below only ever receives single-segment names.
+[[redirects]]
+  from = "/api/media/upload"
+  to = "/.netlify/functions/media-upload"
+  status = 200
+
+[[redirects]]
+  from = "/api/media/file"
+  to = "/.netlify/functions/media-file"
+  status = 200
+
+#   /api/login  →  /.netlify/functions/login
+#   /api/media  →  /.netlify/functions/media   (query string kept)
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200

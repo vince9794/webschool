@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin Platform | The Greenhill School</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       LOGIN
+       ============================================================ -->
+  <div id="loginView" class="login-view">
+    <div class="login-card">
+      <div class="login-crest">
+        <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 5 L92 25 L92 70 Q92 100 50 115 Q8 100 8 70 L8 25 Z" fill="#1B2A4A" stroke="#C9A227" stroke-width="2"/>
+          <path d="M50 25 L50 90" stroke="#C9A227" stroke-width="1.2"/>
+          <path d="M30 50 L70 50" stroke="#C9A227" stroke-width="1.2"/>
+          <circle cx="50" cy="42" r="7" fill="#C9A227"/>
+          <path d="M30 72 Q50 62 70 72" stroke="#C9A227" stroke-width="1" fill="none"/>
+          <path d="M30 80 Q50 70 70 80" stroke="#C9A227" stroke-width="1" fill="none"/>
+          <text x="50" y="105" text-anchor="middle" fill="#C9A227" font-family="serif" font-size="7" font-weight="bold">1978</text>
+        </svg>
+      </div>
+      <h1>The Greenhill School</h1>
+      <p class="login-sub">Admin Platform — manage the website, subscribers and messages.</p>
+
+      <form id="loginForm" autocomplete="off">
+        <label for="passwordInput">Admin password</label>
+        <div class="login-row">
+          <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="current-password" required>
+          <button type="submit" class="btn btn-crimson">Sign in</button>
+        </div>
+        <div id="loginError" class="form-error" role="alert"></div>
+      </form>
+
+      <p class="login-hint" id="defaultHint" hidden>
+        <i class="fas fa-info-circle"></i>
+        Default password is <strong>greenhill</strong> — change it in Settings after signing in.
+      </p>
+      <a class="login-back" href="/index.html"><i class="fas fa-arrow-left"></i> Back to the website</a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       APP SHELL
+       ============================================================ -->
+  <div id="app" class="app" hidden>
+    <aside class="sidebar">
+      <div class="side-brand">
+        <svg viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 5 L92 25 L92 70 Q92 100 50 115 Q8 100 8 70 L8 25 Z" fill="#0F1B33" stroke="#C9A227" stroke-width="2"/>
+          <path d="M50 25 L50 90" stroke="#C9A227" stroke-width="1.2"/>
+          <path d="M30 50 L70 50" stroke="#C9A227" stroke-width="1.2"/>
+          <circle cx="50" cy="42" r="7" fill="#C9A227"/>
+          <path d="M30 72 Q50 62 70 72" stroke="#C9A227" stroke-width="1" fill="none"/>
+          <path d="M30 80 Q50 70 70 80" stroke="#C9A227" stroke-width="1" fill="none"/>
+          <text x="50" y="105" text-anchor="middle" fill="#C9A227" font-family="serif" font-size="7" font-weight="bold">1978</text>
+        </svg>
+        <div>
+          <strong>The Greenhill School</strong>
+          <span>Admin Platform</span>
+        </div>
+      </div>
+
+      <nav class="side-nav" id="sideNav">
+        <button data-view="dashboard" class="active"><i class="fas fa-gauge-high"></i> Dashboard</button>
+        <button data-view="content"><i class="fas fa-pen-to-square"></i> Content</button>
+        <button data-view="media"><i class="fas fa-images"></i> Media</button>
+        <button data-view="subscribers"><i class="fas fa-users"></i> Subscribers</button>
+        <button data-view="messages"><i class="fas fa-bullhorn"></i> Messages</button>
+        <button data-view="settings"><i class="fas fa-gear"></i> Settings</button>
+      </nav>
+
+      <div class="side-foot">
+        <a href="/index.html" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> View website</a>
+        <button id="logoutBtn"><i class="fas fa-right-from-bracket"></i> Sign out</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <h2 id="viewTitle">Dashboard</h2>
+        <div class="topbar-right">
+          <span id="saveIndicator" class="save-indicator" hidden>Unsaved changes</span>
+        </div>
+      </header>
+
+      <div id="alertHost" class="alert-host"></div>
+
+      <!-- DASHBOARD -->
+      <section id="view-dashboard" class="view"></section>
+
+      <!-- CONTENT -->
+      <section id="view-content" class="view" hidden>
+        <div class="page-tabs" id="pageTabs"></div>
+        <div class="editor-toolbar">
+          <div class="editor-meta">
+            <span id="editorPageTitle" class="editor-title"></span>
+            <span id="editorPageDesc" class="editor-desc"></span>
+          </div>
+          <div class="editor-actions">
+            <span id="validationChip" class="validation-chip" hidden></span>
+            <button class="btn btn-ghost" id="resetPageBtn"><i class="fas fa-rotate-left"></i> Reset page</button>
+            <button class="btn btn-navy" id="savePageBtn"><i class="fas fa-floppy-disk"></i> Save changes</button>
+          </div>
+        </div>
+        <div id="validationBox" class="validation-box" hidden></div>
+        <div id="contentEditor" class="content-editor"></div>
+      </section>
+
+      <!-- MEDIA -->
+      <section id="view-media" class="view" hidden></section>
+
+      <!-- SUBSCRIBERS -->
+      <section id="view-subscribers" class="view" hidden></section>
+
+      <!-- MESSAGES -->
+      <section id="view-messages" class="view" hidden></section>
+
+      <!-- SETTINGS -->
+      <section id="view-settings" class="view" hidden></section>
+    </main>
+  </div>
+
+  <!-- MEDIA PICKER MODAL -->
+  <div id="mediaModal" class="modal" hidden>
+    <div class="modal-card modal-wide">
+      <div class="modal-head">
+        <h3><i class="fas fa-images"></i> Choose an image</h3>
+        <button class="icon-btn" data-close-modal aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="upload-row">
+          <label class="btn btn-crimson file-btn">
+            <i class="fas fa-upload"></i> Upload image
+            <input type="file" id="modalUpload" accept="image/jpeg,image/png,image/webp,image/gif,image/avif" hidden>
+          </label>
+          <span class="upload-hint">JPG, PNG, WEBP, GIF or AVIF — up to 4 MB</span>
+        </div>
+        <div id="modalGrid" class="media-grid"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

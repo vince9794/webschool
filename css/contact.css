@@ -1,0 +1,583 @@
+/* ============================================================
+   THE GREENHILL SCHOOL â€” contact.html page-specific styles
+   Load AFTER css/style.css (shared site styles).
+   ============================================================ */
+
+    /* ============================================================
+       6. PAGE HERO
+       ============================================================ */
+    .page-hero {
+      position: relative; min-height: 460px;
+      display: flex; align-items: center;
+      overflow: hidden; background: var(--navy);
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      background-repeat: no-repeat;
+    }
+    .page-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg,
+        rgba(27, 42, 74, 0.92) 0%,
+        rgba(27, 42, 74, 0.78) 50%,
+        rgba(27, 42, 74, 0.65) 100%);
+    }
+    .page-hero-content {
+      position: relative; z-index: 3;
+      padding: 100px 0 80px; text-align: center;
+      max-width: 820px; margin: 0 auto;
+    }
+    .page-hero-kicker {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 7px 18px;
+      background: rgba(201, 162, 39, 0.15);
+      border: 1px solid rgba(201, 162, 39, 0.35);
+      color: var(--gold); font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: var(--radius-full); margin-bottom: 24px;
+    }
+    .page-hero-content h1 {
+      color: var(--ivory); font-size: 3.2rem;
+      line-height: 1.15; margin-bottom: 18px;
+    }
+    .page-hero-content h1 em {
+      font-style: italic; color: var(--gold); font-weight: 400;
+    }
+    .page-hero-content p {
+      color: rgba(250, 247, 240, 0.82);
+      font-size: 1.08rem; line-height: 1.8;
+      max-width: 640px; margin: 0 auto 28px;
+    }
+    .breadcrumb {
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; font-size: 0.78rem;
+      font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .breadcrumb a { color: rgba(250, 247, 240, 0.65); }
+    .breadcrumb a:hover { color: var(--gold); }
+    .breadcrumb span { color: rgba(250, 247, 240, 0.35); }
+    .breadcrumb .current { color: var(--gold); font-weight: 700; }
+
+    /* ============================================================
+       7. CONTACT INFO CARDS
+       ============================================================ */
+    .info-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+    .info-card {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 34px 26px;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .info-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 4px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .info-card:nth-child(1)::before { background: var(--crimson); }
+    .info-card:nth-child(2)::before { background: var(--gold); }
+    .info-card:nth-child(3)::before { background: var(--forest); }
+    .info-card:nth-child(4)::before { background: var(--navy); }
+
+    .info-card:hover::before { transform: scaleX(1); }
+    .info-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold);
+    }
+    .info-icon {
+      width: 60px; height: 60px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 18px;
+      border-radius: var(--radius);
+      font-size: 1.4rem;
+      transition: var(--transition);
+    }
+    .info-card:nth-child(1) .info-icon {
+      background: rgba(166, 25, 46, 0.12); color: var(--crimson);
+    }
+    .info-card:nth-child(2) .info-icon {
+      background: rgba(201, 162, 39, 0.15); color: var(--gold);
+    }
+    .info-card:nth-child(3) .info-icon {
+      background: rgba(45, 90, 61, 0.12); color: var(--forest);
+    }
+    .info-card:nth-child(4) .info-icon {
+      background: rgba(27, 42, 74, 0.12); color: var(--navy);
+    }
+    .info-card:hover .info-icon {
+      transform: scale(1.08) rotate(-6deg);
+    }
+    .info-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+    .info-card p {
+      font-size: 0.88rem;
+      color: var(--charcoal-light);
+      line-height: 1.65;
+    }
+    .info-card p a {
+      color: var(--crimson);
+      font-weight: 600;
+    }
+    .info-card p a:hover { text-decoration: underline; }
+
+    /* ============================================================
+       8. CONTACT FORM + SIDEBAR
+       ============================================================ */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .form-card {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 48px 44px;
+      box-shadow: var(--shadow-md);
+    }
+    .form-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+    .form-subtitle {
+      font-size: 0.9rem;
+      color: var(--charcoal-light);
+      margin-bottom: 32px;
+    }
+
+    .form-success {
+      display: none;
+      padding: 20px 24px;
+      background: rgba(45, 90, 61, 0.1);
+      border: 1px solid rgba(45, 90, 61, 0.3);
+      border-radius: var(--radius);
+      color: var(--forest);
+      font-weight: 600;
+      margin-bottom: 24px;
+      align-items: center;
+      gap: 12px;
+    }
+    .form-success.show { display: flex; }
+    .form-success i { font-size: 1.3rem; }
+
+    .form-group { margin-bottom: 22px; }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+    .form-group label .req { color: var(--crimson); }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--stone);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.92rem;
+      color: var(--charcoal);
+      transition: var(--transition);
+      font-family: 'Source Sans 3', sans-serif;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--crimson);
+      background: var(--ivory);
+      box-shadow: 0 0 0 4px rgba(166, 25, 46, 0.08);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(90, 90, 90, 0.5);
+    }
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+    .form-group.error input,
+    .form-group.error select,
+    .form-group.error textarea {
+      border-color: var(--crimson);
+      background: rgba(166, 25, 46, 0.04);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* Sidebar */
+    .contact-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .sidebar-card {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+    }
+    .sidebar-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .sidebar-card h3 i { color: var(--crimson); font-size: 1rem; }
+
+    .office-hours {
+      display: flex;
+      flex-direction: column;
+    }
+    .office-hours li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 0;
+      border-bottom: 1px dashed var(--border);
+      font-size: 0.9rem;
+    }
+    .office-hours li:last-child { border-bottom: none; }
+    .office-hours li span:first-child {
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .office-hours li span:last-child {
+      color: var(--charcoal-light);
+    }
+    .office-hours li.closed span:last-child {
+      color: var(--crimson);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: var(--radius);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      transition: var(--transition);
+      border: 1.5px solid var(--border);
+      background: var(--stone);
+      color: var(--charcoal);
+      text-transform: uppercase;
+    }
+    .social-btn i { font-size: 0.9rem; }
+    .social-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      color: #fff;
+    }
+    .social-btn.facebook:hover { background: #1877F2; border-color: #1877F2; }
+    .social-btn.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366); border-color: #dc2743; }
+    .social-btn.youtube:hover { background: #FF0000; border-color: #FF0000; }
+    .social-btn.linkedin:hover { background: #0A66C2; border-color: #0A66C2; }
+    .social-btn.whatsapp:hover { background: #25D366; border-color: #25D366; }
+
+    /* ============================================================
+       9. MAP + DIRECTIONS
+       ============================================================ */
+    .map-wrapper {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      height: 440px;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 32px;
+      position: relative;
+      filter: grayscale(0.4) sepia(0.15);
+    }
+    .map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    .map-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(250, 247, 240, 0.96);
+      backdrop-filter: blur(10px);
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      border-left: 4px solid var(--gold);
+      font-size: 0.82rem;
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+    .map-caption i { color: var(--crimson); margin-right: 6px; }
+
+    .directions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .direction-card {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      transition: var(--transition);
+    }
+    .direction-card:hover {
+      border-color: var(--crimson);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+    .direction-icon {
+      width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--navy);
+      color: var(--gold);
+      border-radius: var(--radius);
+      font-size: 1.15rem;
+      margin-bottom: 16px;
+    }
+    .direction-card h4 {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .direction-card p {
+      font-size: 0.88rem;
+      color: var(--charcoal-light);
+      line-height: 1.7;
+    }
+    .direction-card p strong { color: var(--navy); }
+
+    /* ============================================================
+       10. DEPARTMENTS
+       ============================================================ */
+    .departments-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .department-card {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 30px 26px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .department-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .department-card:nth-child(1)::before { background: var(--crimson); }
+    .department-card:nth-child(2)::before { background: var(--gold); }
+    .department-card:nth-child(3)::before { background: var(--forest); }
+    .department-card:nth-child(4)::before { background: var(--navy); }
+    .department-card:nth-child(5)::before { background: var(--crimson); }
+    .department-card:nth-child(6)::before { background: var(--gold); }
+
+    .department-card:hover::before { transform: scaleX(1); }
+    .department-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold);
+    }
+    .department-icon {
+      width: 50px; height: 50px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--navy); color: var(--gold);
+      border-radius: var(--radius);
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      transition: var(--transition);
+    }
+    .department-card:hover .department-icon {
+      background: var(--crimson); color: var(--ivory);
+      transform: scale(1.06) rotate(-5deg);
+    }
+    .department-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 14px;
+    }
+    .department-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--charcoal-light);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .department-detail i {
+      color: var(--gold);
+      font-size: 0.82rem;
+      margin-top: 4px;
+      flex-shrink: 0;
+      width: 16px;
+    }
+    .department-detail a {
+      color: var(--charcoal-light);
+      word-break: break-word;
+    }
+    .department-detail a:hover { color: var(--crimson); }
+
+    /* ============================================================
+       11. CTA BAND
+       ============================================================ */
+    .cta-band {
+      background: var(--navy);
+      padding: 90px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-band::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 400px; height: 460px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120' fill='none' stroke='%23C9A227' stroke-width='0.6' opacity='0.12'%3E%3Cpath d='M50 5 L92 25 L92 70 Q92 100 50 115 Q8 100 8 70 L8 25 Z'/%3E%3Cpath d='M50 25 L50 90'/%3E%3Cpath d='M30 50 L70 50'/%3E%3Ccircle cx='50' cy='42' r='8'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .cta-band .container {
+      position: relative; z-index: 2; text-align: center;
+    }
+    .cta-band h2 {
+      color: var(--ivory); font-size: 2.5rem;
+      margin-bottom: 18px; max-width: 720px;
+      margin-left: auto; margin-right: auto;
+    }
+    .cta-band h2 em {
+      color: var(--gold); font-style: italic; font-weight: 400;
+    }
+    .cta-band p {
+      color: rgba(250, 247, 240, 0.8);
+      font-size: 1.08rem; max-width: 620px;
+      margin: 0 auto 36px; line-height: 1.75;
+    }
+    .cta-buttons {
+      display: flex; justify-content: center;
+      gap: 16px; flex-wrap: wrap;
+    }
+
+    /* ============================================================
+       14. RESPONSIVE — TABLET
+       ============================================================ */
+    @media (max-width: 1024px) {
+      h1 { font-size: 2.4rem; }
+      h2 { font-size: 1.9rem; }
+      .page-hero-content h1 { font-size: 2.5rem; }
+
+      .info-cards { grid-template-columns: 1fr 1fr; }
+
+      .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+      .form-card { padding: 36px 32px; }
+
+      .directions-grid { grid-template-columns: 1fr; }
+      .departments-grid { grid-template-columns: 1fr 1fr; }
+
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .footer-brand { grid-column: 1 / -1; max-width: none; }
+
+      
+      
+      
+
+      
+      
+    }
+
+    /* ============================================================
+       15. RESPONSIVE — MOBILE
+       ============================================================ */
+    @media (max-width: 640px) {
+      h1 { font-size: 1.9rem; }
+      h2 { font-size: 1.55rem; }
+      .section { padding: 60px 0; }
+
+      .top-strip { font-size: 0.7rem; }
+      .top-strip-right { display: none; }
+
+      .page-hero-content { padding: 80px 0 60px; }
+      .page-hero-content h1 { font-size: 1.9rem; }
+      .page-hero-content p { font-size: 0.98rem; }
+
+      .info-cards { grid-template-columns: 1fr; gap: 16px; }
+
+      .form-card { padding: 28px 22px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+
+      .departments-grid { grid-template-columns: 1fr; }
+
+      .map-wrapper { height: 320px; }
+      .map-caption {
+        bottom: 12px; left: 12px; right: 12px;
+        padding: 10px 14px; font-size: 0.75rem;
+      }
+
+      .cta-band { padding: 60px 0; }
+      .cta-band h2 { font-size: 1.75rem; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .cta-buttons .btn { width: 100%; max-width: 320px; }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      
+    }
+
+
+
+    /* ============================================================
+       Page-specific tweak: .link-arrow slightly smaller on this page
+       ============================================================ */
+    .link-arrow {
+      font-size: 0.88rem;
+    }

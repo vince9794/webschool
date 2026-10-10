@@ -1,0 +1,107 @@
+[
+  {
+    "path": "images/img-01.jpg",
+    "name": "img-01.jpg",
+    "bytes": 31127
+  },
+  {
+    "path": "images/img-02.jpg",
+    "name": "img-02.jpg",
+    "bytes": 28366
+  },
+  {
+    "path": "images/img-03.jpg",
+    "name": "img-03.jpg",
+    "bytes": 35674
+  },
+  {
+    "path": "images/img-04.jpg",
+    "name": "img-04.jpg",
+    "bytes": 30277
+  },
+  {
+    "path": "images/img-05.jpg",
+    "name": "img-05.jpg",
+    "bytes": 53810
+  },
+  {
+    "path": "images/img-06.jpg",
+    "name": "img-06.jpg",
+    "bytes": 41621
+  },
+  {
+    "path": "images/img-07.jpg",
+    "name": "img-07.jpg",
+    "bytes": 44177
+  },
+  {
+    "path": "images/img-08.jpg",
+    "name": "img-08.jpg",
+    "bytes": 30590
+  },
+  {
+    "path": "images/img-09.jpg",
+    "name": "img-09.jpg",
+    "bytes": 38034
+  },
+  {
+    "path": "images/img-10.jpg",
+    "name": "img-10.jpg",
+    "bytes": 39385
+  },
+  {
+    "path": "images/img-11.jpg",
+    "name": "img-11.jpg",
+    "bytes": 37389
+  },
+  {
+    "path": "images/img-12.jpg",
+    "name": "img-12.jpg",
+    "bytes": 44509
+  },
+  {
+    "path": "images/img-13.jpg",
+    "name": "img-13.jpg",
+    "bytes": 33263
+  },
+  {
+    "path": "images/img-campus-1.jpg",
+    "name": "img-campus-1.jpg",
+    "bytes": 71505
+  },
+  {
+    "path": "images/img-campus-2.jpg",
+    "name": "img-campus-2.jpg",
+    "bytes": 4434856
+  },
+  {
+    "path": "images/img-campus-3.jpg",
+    "name": "img-campus-3.jpg",
+    "bytes": 6637296
+  },
+  {
+    "path": "images/img-classroom.webp",
+    "name": "img-classroom.webp",
+    "bytes": 116756
+  },
+  {
+    "path": "images/img-hero.webp",
+    "name": "img-hero.webp",
+    "bytes": 17466
+  },
+  {
+    "path": "images/img-meals.webp",
+    "name": "img-meals.webp",
+    "bytes": 70780
+  },
+  {
+    "path": "images/img-sports.jpg",
+    "name": "img-sports.jpg",
+    "bytes": 27631
+  },
+  {
+    "path": "images/img-student-books.webp",
+    "name": "img-student-books.webp",
+    "bytes": 24804
+  }
+]

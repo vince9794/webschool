@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Greenhill Journal — News, stories, and events from The Greenhill School, a progressive co-educational day school in Karen, Nairobi.">
+  <title>Journal | The Greenhill School</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/journal.css">
+</head>
+<body>
+
+  <!-- TOP STRIP -->
+  <div class="top-strip">
+    <div class="container">
+      <div class="top-strip-left">
+        <span><i class="fas fa-map-marker-alt"></i> Karen, Nairobi · Est. 2016</span>
+        <span><i class="fas fa-phone"></i> +254 700 123 456</span>
+      </div>
+      <div class="top-strip-right">
+        <a href="mailto:info@greenhill.ac.ke"><i class="fas fa-envelope"></i> info@greenhill.ac.ke</a>
+        <a href="portal.html" class="portal-link">Parent Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <svg class="crest" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50 5 L92 25 L92 70 Q92 100 50 115 Q8 100 8 70 L8 25 Z" fill="#1B2A4A" stroke="#C9A227" stroke-width="2"/>
+          <path d="M50 25 L50 90" stroke="#C9A227" stroke-width="1.2"/>
+          <path d="M30 50 L70 50" stroke="#C9A227" stroke-width="1.2"/>
+          <circle cx="50" cy="42" r="7" fill="#C9A227"/>
+          <path d="M30 72 Q50 62 70 72" stroke="#C9A227" stroke-width="1" fill="none"/>
+          <path d="M30 80 Q50 70 70 80" stroke="#C9A227" stroke-width="1" fill="none"/>
+          <text x="50" y="105" text-anchor="middle" fill="#C9A227" font-family="serif" font-size="7" font-weight="bold">1978</text>
+        </svg>
+        <div class="logo-text">
+          <span class="logo-name">The Greenhill School</span>
+          <span class="logo-tagline">Ad Astra Per Curiositatem</span>
+        </div>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="learning.html">Learning</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="campus.html">Campus</a>
+        <a href="journal.html" class="active">Journal</a>
+        <a href="contact.html">Contact</a>
+        <a href="portal.html" class="portal-nav-link">Parent Portal</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="admissions.html" class="btn btn-navy">Inquire</a>
+        <a href="portal.html" class="btn btn-outline-crimson">Parent Portal</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="overlay" id="overlay"></div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero-bg" style="background-image: url('images/img-hero.webp');"></div>
+      <div class="page-hero-overlay"></div>
+      <div class="container">
+        <div class="page-hero-content">
+          <div class="page-hero-kicker">
+            <i class="fas fa-newspaper"></i> The Greenhill Journal
+          </div>
+          <h1>Stories from our <em>school.</em></h1>
+          <p>
+            News, updates, and events from The Greenhill School — our classrooms, our gardens, our community, and the children at the heart of it all.
+          </p>
+          <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span class="current">Journal</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER TABS + FEATURED + NEWS GRID -->
+    <section class="section">
+      <div class="container">
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs reveal">
+          <button class="filter-btn active" data-filter="all">All Stories</button>
+          <button class="filter-btn" data-filter="academics">Academics</button>
+          <button class="filter-btn" data-filter="campus">Campus</button>
+          <button class="filter-btn" data-filter="community">Community</button>
+          <button class="filter-btn" data-filter="alumni">Alumni</button>
+          <button class="filter-btn" data-filter="events">Events</button>
+        </div>
+
+        <!-- Featured Story -->
+        <div class="featured-story reveal">
+          <div class="featured-image">
+            <img src="images/img-06.jpg" alt="Featured story">
+            <span class="featured-category">Featured Story</span>
+          </div>
+          <div class="featured-content">
+            <div class="featured-meta">
+              <span class="date">September 2026</span>
+              <span class="sep"></span>
+              <span>Academics</span>
+            </div>
+            <h2>Greenhill Students Take Top Prize at National Science Fair in Nairobi</h2>
+            <p>
+              Three teams from Greenhill represented our school at this year's National Science & Engineering Fair at the University of Nairobi. Their project on urban composting — built entirely from recycled materials — won the top prize in the junior category and a special award for sustainability.
+            </p>
+            <a href="#" class="link-arrow">Read full story</a>
+          </div>
+        </div>
+
+        <!-- News Grid -->
+        <div class="news-grid">
+          <article class="news-card reveal" data-category="community">
+            <div class="news-image">
+              <img src="images/img-07.jpg" alt="Tree planting">
+              <span class="news-category">Community</span>
+            </div>
+            <div class="news-body">
+              <div class="news-date">August 2026</div>
+              <h3>Grade 7 Plants 500 Indigenous Trees in the Ngong Hills</h3>
+              <p>As part of our outdoor education program, our Grade 7 learners spent a week in the Ngong Hills, planting trees alongside community members and local conservationists.</p>
+              <a href="#" class="news-read-more">Read more</a>
+            </div>
+          </article>
+
+          <article class="news-card reveal" data-category="campus">
+            <div class="news-image">
+              <img src="images/img-08.jpg" alt="New studio">
+              <span class="news-category">Campus</span>
+            </div>
+            <div class="news-body">
+              <div class="news-date">July 2026</div>
+              <h3>New Creative Studio Opens on Campus</h3>
+              <p>Our new 200 sqm studio building — designed with input from our students — opens for art, music, and handwork, with natural light on every wall.</p>
+              <a href="#" class="news-read-more">Read more</a>
+            </div>
+          </article>
+
+          <article class="news-card reveal" data-category="academics">
+            <div class="news-image">
+              <img src="images/img-09.jpg" alt="KCSE results">
+              <span class="news-category">Academics</span>
+            </div>
+            <div class="news-body">
+              <div class="news-date">June 2026</div>
+              <h3>Class of 2026 Records 97% University Transition Rate</h3>
+              <p>Our first cohort of middle years graduates received offers from leading secondary schools across Kenya and internationally, with 12 students receiving merit scholarships.</p>
+              <a href="#" class="news-read-more">Read more</a>
+            </div>
+          </article>
+
+          <article class="news-card reveal" data-category="alumni">
+            <div class="news-image">
+              <img src="images/img-12.jpg" alt="Alumni">
+              <span class="news-category">Alumni</span>
+            </div>
+            <div class="news-body">
+              <div class="news-date">May 2026</div>
+              <h3>Alumna Spotlight: From Karen to Cambridge to a Nairobi Startup</h3>
+              <p>Njeri Mwangi, one of Greenhill's first graduates, shares her journey from our founding class to studying engineering at Cambridge and now building a Nairobi fintech startup.</p>
+              <a href="#" class="news-read-more">Read more</a>
+            </div>
+          </article>
+
+          <article class="news-card reveal" data-category="events">
+            <div class="news-image">
+              <img src="images/img-13.jpg" alt="Music festival">
+              <span class="news-category">Events</span>
+            </div>
+            <div class="news-body">
+              <div class="news-date">April 2026</div>
+              <h3>Greenhill Choir Performs at Nairobi Music Festival</h3>
+              <p>Our school choir performed three pieces at the Kenya National Music Festival, earning a distinction in the junior category and an invitation to the gala concert.</p>
+              <a href="#" class="news-read-more">Read more</a>
+            </div>
+          </article>
+
+          <article class="news-card reveal" data-category="academics">
+            <div class="news-image">
+              <img src="images/img-02.jpg" alt="Robotics club">
+              <span class="news-category">Academics</span>
+            </div>
+            <div class="news-body">
+              <div class="news-date">March 2026</div>
+              <h3>Grade 5 Robotics Team Wins Regional Competition</h3>
+              <p>Our Grade 5 coding and robotics team took first place at the Nairobi regional championships, impressing judges with a machine that sorts school recycling.</p>
+              <a href="#" class="news-read-more">Read more</a>
+            </div>
+          </article>
+
+          <article class="news-card reveal" data-category="campus">
+            <div class="news-image">
+              <img src="images/img-03.jpg" alt="Garden harvest">
+              <span class="news-category">Campus</span>
+            </div>
+            <div class="news-body">
+              <div class="news-date">February 2026</div>
+              <h3>Garden Program Doubles Harvest, Serving 500 Meals Weekly</h3>
+              <p>Thanks to expanded planting beds and a new greenhouse, our garden program now provides fresh vegetables for the school kitchen twice a week — a first for Greenhill.</p>
+              <a href="#" class="news-read-more">Read more</a>
+            </div>
+          </article>
+
+          <article class="news-card reveal" data-category="community">
+            <div class="news-image">
+              <img src="images/img-student-books.webp" alt="Reading program">
+              <span class="news-category">Community</span>
+            </div>
+            <div class="news-body">
+              <div class="news-date">February 2026</div>
+              <h3>Greenhill Partners with Local Children's Home for Reading Program</h3>
+              <p>Our Grade 6 learners began a weekly reading partnership with a nearby children's home — an initiative led entirely by students after a class discussion on service.</p>
+              <a href="#" class="news-read-more">Read more</a>
+            </div>
+          </article>
+
+          <article class="news-card reveal" data-category="alumni">
+            <div class="news-image">
+              <img src="images/img-04.jpg" alt="Alumni council">
+              <span class="news-category">Alumni</span>
+            </div>
+            <div class="news-body">
+              <div class="news-date">January 2026</div>
+              <h3>Greenhill Alumni Council Launches Mentorship Program</h3>
+              <p>Our new alumni council has launched a mentorship program pairing former students with current Grade 7–8 learners for career conversations and study support.</p>
+              <a href="#" class="news-read-more">Read more</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Events Table -->
+        <div class="events-wrapper reveal">
+          <div class="events-header">
+            <h3>Upcoming Events</h3>
+            <span><i class="fas fa-calendar-alt"></i> Term 3 · 2026</span>
+          </div>
+
+          <table class="events-table">
+            <thead>
+              <tr>
+                <th style="width:90px;">Date</th>
+                <th>Event</th>
+                <th>Location</th>
+                <th style="width:100px;">RSVP</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="event-date-box">
+                    <span class="month">Sep</span>
+                    <span class="day">22</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="event-title">Science Fair — Family Open Day</div>
+                  <div class="event-desc">Come see our children's science projects on display.</div>
+                </td>
+                <td>
+                  <div class="event-location"><i class="fas fa-map-marker-alt"></i> Main Hall</div>
+                </td>
+                <td><a href="#" class="event-rsvp">RSVP</a></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="event-date-box">
+                    <span class="month">Oct</span>
+                    <span class="day">05</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="event-title">Parent Information Meeting</div>
+                  <div class="event-desc">For prospective families considering Greenhill for 2027.</div>
+                </td>
+                <td>
+                  <div class="event-location"><i class="fas fa-map-marker-alt"></i> Karen Campus</div>
+                </td>
+                <td><a href="#" class="event-rsvp">RSVP</a></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="event-date-box">
+                    <span class="month">Oct</span>
+                    <span class="day">19</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="event-title">Inter-House Athletics</div>
+                  <div class="event-desc">Our annual inter-house athletics competition — parents welcome.</div>
+                </td>
+                <td>
+                  <div class="event-location"><i class="fas fa-map-marker-alt"></i> Playing Field</div>
+                </td>
+                <td><a href="#" class="event-rsvp">RSVP</a></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="event-date-box">
+                    <span class="month">Nov</span>
+                    <span class="day">09</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="event-title">Greenhill Family Fun Run</div>
+                  <div class="event-desc">Our annual community run through the campus forest trail.</div>
+                </td>
+                <td>
+                  <div class="event-location"><i class="fas fa-map-marker-alt"></i> Forest Trail</div>
+                </td>
+                <td><a href="#" class="event-rsvp">RSVP</a></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="event-date-box">
+                    <span class="month">Nov</span>
+                    <span class="day">23</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="event-title">End of Year Production</div>
+                  <div class="event-desc">Our drama club presents their annual end-of-year play.</div>
+                </td>
+                <td>
+                  <div class="event-location"><i class="fas fa-map-marker-alt"></i> Main Hall</div>
+                </td>
+                <td><a href="#" class="event-rsvp">RSVP</a></td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="event-date-box">
+                    <span class="month">Dec</span>
+                    <span class="day">05</span>
+                  </div>
+                </td>
+                <td>
+                  <div class="event-title">Prize Giving &amp; Graduation</div>
+                  <div class="event-desc">Celebrating our Grade 8 graduates and this year's award winners.</div>
+                </td>
+                <td>
+                  <div class="event-location"><i class="fas fa-map-marker-alt"></i> Main Hall</div>
+                </td>
+                <td><a href="#" class="event-rsvp">RSVP</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SUBSCRIBE BAND -->
+    <section class="subscribe-band">
+      <div class="container reveal">
+        <div class="kicker">The Greenhill Dispatch</div>
+        <h2>Stories from our school, <em>delivered to your inbox.</em></h2>
+        <p>
+          Once a month, we share the best of what's happening at Greenhill — stories from our classrooms, updates from our gardens, and news from our community.
+        </p>
+
+        <form class="subscribe-form" id="subscribeForm">
+          <input type="email" id="subscribeEmail" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="subscribe-note">We send one email a month. No spam, ever. Unsubscribe anytime.</p>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section class="cta-band">
+      <div class="container reveal">
+        <h2>Want to be part of the story?</h2>
+        <p>
+          Whether you're a prospective family, an alumnus, or a friend of the school, we'd love to hear from you.
+        </p>
+        <div class="cta-buttons">
+          <a href="admissions.html" class="btn btn-crimson btn-lg">
+            <i class="fas fa-paper-plane"></i> Begin an Inquiry
+          </a>
+          <a href="contact.html" class="btn btn-outline-ivory btn-lg">
+            <i class="fas fa-envelope"></i> Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg class="crest" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M50 5 L92 25 L92 70 Q92 100 50 115 Q8 100 8 70 L8 25 Z" fill="#0F1B33" stroke="#C9A227" stroke-width="2"/>
+              <path d="M50 25 L50 90" stroke="#C9A227" stroke-width="1.2"/>
+              <path d="M30 50 L70 50" stroke="#C9A227" stroke-width="1.2"/>
+              <circle cx="50" cy="42" r="7" fill="#C9A227"/>
+              <path d="M30 72 Q50 62 70 72" stroke="#C9A227" stroke-width="1" fill="none"/>
+              <path d="M30 80 Q50 70 70 80" stroke="#C9A227" stroke-width="1" fill="none"/>
+              <text x="50" y="105" text-anchor="middle" fill="#C9A227" font-family="serif" font-size="7" font-weight="bold">1978</text>
+            </svg>
+            <div class="logo-text">
+              <span class="logo-name">The Greenhill School</span>
+              <span class="logo-tagline">Ad Astra Per Curiositatem</span>
+            </div>
+          </div>
+          <p>A progressive co-educational day school in Karen, Nairobi. Where curiosity builds the future — from ages 4 to 14.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Greenhill</a></li>
+            <li><a href="learning.html"><i class="fas fa-chevron-right"></i> Learning</a></li>
+            <li><a href="admissions.html"><i class="fas fa-chevron-right"></i> Admissions</a></li>
+            <li><a href="campus.html"><i class="fas fa-chevron-right"></i> Campus & Community</a></li>
+            <li><a href="journal.html"><i class="fas fa-chevron-right"></i> Journal</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Community</h4>
+          <ul>
+            <li><a href="portal.html"><i class="fas fa-chevron-right"></i> Parent Portal</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Alumnae & Alumni</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Parents' Association</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Support Greenhill</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Careers</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Visit Us</h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <strong>Campus</strong>
+                Karen, Nairobi, Kenya
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-phone"></i>
+              <div>
+                <strong>Call</strong>
+                +254 700 123 456
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-envelope"></i>
+              <div>
+                <strong>Email</strong>
+                info@greenhill.ac.ke
+              </div>
+            </li>
+            <li>
+              <i class="fas fa-clock"></i>
+              <div>
+                <strong>Office Hours</strong>
+                Mon–Fri · 7:30 AM – 4:30 PM
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 The Greenhill School · Karen, Nairobi · All rights reserved. · <a href="#">Privacy Policy</a> · <a href="#">Terms of Use</a></p>
+      </div>
+    </div>
+  </footer>
+
+    <script src="js/main.js"></script>
+
+    <script>
+    // FILTER TABS (event delegation — re-queries cards so re-rendered ones still filter)
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.news-card').forEach(card => {
+        const matches = filter === 'all' || card.dataset.category === filter;
+        card.style.display = matches ? '' : 'none';
+      });
+    });
+
+    // SUBSCRIBE FORM
+    const subscribeForm = document.getElementById('subscribeForm');
+    subscribeForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('subscribeEmail');
+      if (!email.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        email.style.borderColor = 'var(--crimson)';
+        return;
+      }
+      const btn = subscribeForm.querySelector('button');
+      const originalText = btn.textContent;
+      btn.textContent = 'Subscribed ✓';
+      btn.style.background = 'var(--ivory)';
+      email.value = '';
+      email.placeholder = 'Thank you — check your inbox!';
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = '';
+        email.placeholder = 'Your email address';
+        email.style.borderColor = '';
+      }, 3500);
+    });
+  </script>
+<script type="module" src="js/cms.js"></script>
+</body>
+</html>
